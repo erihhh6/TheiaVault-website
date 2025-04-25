@@ -1,0 +1,45 @@
+<meta charset="UTF-8">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap" rel="stylesheet">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="keywords" content="internet, tehnici web, HTML, taguri, bijuterii, accesorii, design, modă, stil">
+<meta name="description" content="Curs de Tehnici Web. Limbajul HTML. Taguri. Descoperă colecția noastră de bijuterii unice și accesorii de modă.">
+<meta name="author" content="Oprea Eric">
+<link rel="icon" type="image/png" href="/icon/favicon-96x96.png" sizes="96x96" >
+<link rel="icon" type="image/svg+xml" href="/icon/favicon.svg" >
+<link rel="shortcut icon" href="/icon/favicon.ico" >
+<link rel="apple-touch-icon" sizes="180x180" href="/icon/apple-touch-icon.png" >
+<link rel="manifest" href="/icon/site.webmanifest" >
+<meta name="apple-mobile-web-app-title" content="TheiaVault">
+<link rel="stylesheet" type="text/css" href="/css/general.css">
+<link rel="stylesheet" type="text/css" href="/css/nav.css">
+<link rel="stylesheet" type="text/css" href="/css/back_to_top.css">
+<link rel="stylesheet" type="text/css" href="/css/container_clip.css">
+<link rel="stylesheet" type="text/css" href="/css/table.css">
+<link rel="stylesheet" type="text/css" href="/css/grid.css">
+<link rel="stylesheet" type="text/css" href="/css/print.css">
+<link rel="stylesheet" type="text/css" href="/css/video.css">
+<link rel="stylesheet" type="text/css" href="/css/links.css">
+<script src="https://kit.fontawesome.com/ef57b133da.js" crossorigin="anonymous"></script>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const hamburger = document.querySelector('.hamburger-menu');
+        const nav = document.querySelector('header nav');
+        hamburger.addEventListener('click', function() {
+            nav.classList.toggle('active');
+        });
+        
+        const menuItems = document.querySelectorAll('header nav > ul > li');
+        menuItems.forEach(item => {
+            if (item.querySelector('ul') !== null) {
+                const link = item.querySelector('a');
+                
+                link.addEventListener('click', function(e) {
+                        e.preventDefault();
+                        item.classList.toggle('submenu-open');
+                });
+            }
+        });
+    });
+</script> 

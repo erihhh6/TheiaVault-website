@@ -1,0 +1,191 @@
+$transition-time: 0.3s;
+$mobile-breakpoint: 768px;
+$submenu-max-height: 500px;
+$hamburger-width: 30px;
+$hamburger-height: 22px;
+
+@mixin transition-effect {
+  transition: all $transition-time ease;
+}
+
+@mixin hover-effect {
+  &:hover {
+    color: var(--culoare-accent);
+  }
+}
+
+header {
+  nav {
+    position: relative;
+    
+    ul {
+      list-style: none;
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      padding: 10px 0;
+      @include transition-effect;
+      
+      li {
+        position: relative;
+        
+        a {
+          color: var(--culoare-highlight);
+          text-decoration: none;
+          display: flex;
+          align-items: center;
+          transition: color $transition-time ease;
+          @include hover-effect;
+          
+          &.home-icon {
+            i {
+              margin-right: 5px;
+            }
+            
+            span {
+              opacity: 0;
+              max-width: 0;
+              overflow: hidden;
+              @include transition-effect;
+            }
+            
+            &:hover span {
+              opacity: 1;
+              max-width: 100px;
+            }
+          }
+        }
+        
+        ul {
+          display: block;
+          position: absolute;
+          top: 100%;
+          left: 0;
+          background-color: var(--culoare-secundara);
+          padding: 10px;
+          border-radius: 5px;
+          transform-origin: top left;
+          transform: scale(0);
+          opacity: 0;
+          @include transition-effect;
+          flex-direction: column;
+          min-width: 150px;
+          z-index: 100;
+          
+          li {
+            margin: 5px 0;
+            
+            a {
+              color: var(--culoare-highlight);
+              display: block;
+              padding: 5px 0;
+              transition: color $transition-time ease;
+              @include hover-effect;
+            }
+          }
+        }
+        
+        &:hover ul {
+          transform: scale(1);
+          opacity: 1;
+        }
+      }
+    }
+    
+    .hamburger-menu {
+      display: none;
+      flex-direction: column;
+      justify-content: space-between;
+      width: $hamburger-width;
+      height: $hamburger-height;
+      cursor: pointer;
+      margin: 10px;
+      
+      span {
+        width: 100%;
+        height: 3px;
+        background-color: var(--culoare-highlight);
+        border-radius: 3px;
+        @include transition-effect;
+      }
+    }
+    
+    @media (max-width: $mobile-breakpoint) {
+      .hamburger-menu {
+        display: flex;
+      }
+      
+      ul {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        flex-direction: column;
+        align-items: flex-start;
+        background-color: var(--culoare-secundara);
+        padding: 0;
+        max-height: 0;
+        overflow: hidden;
+        opacity: 0;
+        z-index: 200;
+        
+        li {
+          width: 100%;
+          padding: 0;
+          
+          a {
+            padding: 10px 15px;
+            display: block;
+            width: 100%;
+          }
+          
+          ul {
+            position: static;
+            display: block;
+            max-height: 0;
+            overflow: hidden;
+            opacity: 0;
+            transform: none;
+            background-color: var(--culoare-principala);
+            width: 100%;
+            @include transition-effect;
+            
+            li {
+              padding-left: 20px;
+            }
+          }
+          
+          &.submenu-open > ul {
+            max-height: $submenu-max-height;
+            opacity: 1;
+            transform: none;
+            padding: 10px 0;
+          }
+          
+          &:hover ul {
+            transform: none;
+            opacity: 0;
+            max-height: 0;
+          }
+          
+          &.submenu-open:hover ul {
+            opacity: 1;
+            max-height: $submenu-max-height;
+          }
+        }
+      }
+      
+      &.active ul {
+        max-height: 1000px;
+        opacity: 1;
+        padding: 10px 0;
+        
+        li ul {
+          max-height: 0;
+          opacity: 0;
+          padding: 0;
+        }
+      }
+    }
+  }
+} 

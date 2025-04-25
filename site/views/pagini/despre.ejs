@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <title>Despre Noi - TheiaVault</title>
+    <%- include('../fragmente/head') %>
+</head>
+<body>
+    <div class="grid-container">
+        <%- include('../fragmente/header') %>
+        <main>
+            <section>
+                <h2>Despre TheiaVault</h2>
+                <div class="about-content">
+                    <h3>Istoria Noastră</h3>
+                    <p>TheiaVault a fost înființată în anul 2020, din pasiunea pentru bijuterii artizanale și dorința de a oferi oamenilor acces la piese unice, realizate cu măiestrie.</p>
+                    
+                    <p>Fondatorul companiei, Andrei Popescu, și-a început călătoria în lumea bijuteriilor în urmă cu peste 15 ani, studiind tehnici tradiționale și moderne de realizare a bijuteriilor în ateliere din Italia și Franța.</p>
+                    
+                    <h3>Misiunea Noastră</h3>
+                    <p>La TheiaVault, misiunea noastră este să creăm bijuterii care nu sunt doar obiecte frumoase, ci povești purtabile, amintiri și simboluri ale momentelor importante din viața clienților noștri.</p>
+                    
+                    <p>Ne-am angajat să folosim doar materiale de cea mai înaltă calitate și să colaborăm cu artiști și meșteșugari locali pentru a crea piese unice, care reflectă atât tradiția cât și inovația în designul de bijuterii.</p>
+                    
+                    <h3>Procesul Nostru</h3>
+                    <p>Fiecare bijuterie TheiaVault trece printr-un proces riguros de creație și verificare a calității. De la schițele inițiale până la finisajele finale, ne asigurăm că fiecare detaliu este perfect.</p>
+
+                    <p>Folosim tehnici tradiționale de prelucrare a metalelor prețioase, combinate cu tehnologii moderne pentru a crea bijuterii durabile, confortabile și unice.</p>
+                    
+                    <figure>
+                        <img src="/img/atelier.jpg" alt="Atelierul TheiaVault" style="width: 80%; max-width: 600px;">
+                        <figcaption>Atelierul nostru din București</figcaption>
+                    </figure>
+
+                    <h3>Echipa Noastră</h3>
+                    <p>Suntem o echipă de 15 profesioniști pasionați, incluzând designeri, bijutieri, specialiști în metale prețioase și pietre, toți uniți de dragostea pentru frumos și pentru munca bine făcută.</p>
+                    
+                    <p>Ne mândrim cu expertiza noastră și suntem mereu pregătiți să oferim sfaturi și recomandări personalizate clienților noștri.</p>
+
+                    <p>Vă invităm să explorați colecțiile noastre și să descoperiți bijuteria care vă reprezintă cel mai bine.</p>
+                </div>
+            </section>
+            
+            <section id="video-vtt">
+                <h2>Prezentarea TheiaVault</h2>
+                <p>Urmăriți videoclipul nostru de prezentare pentru a descoperi povestea din spatele bijuteriilor noastre.</p>
+                <div class="video-container">
+                    <video class="video-player" controls preload="auto" poster="/imagini/video-poster/jewelry-poster.jpg">
+                        <source src="/video/jewelry.mp4" type="video/mp4">
+                        <source src="/video/jewelry.webm" type="video/webm">
+                        
+                        <track label="Română" kind="subtitles" srclang="ro" src="/vtt/subtitles_ro.vtt" default>
+                        <track label="English" kind="subtitles" srclang="en" src="/vtt/subtitles_en.vtt">
+                        
+                        Browserul dumneavoastră nu suportă tag-ul video.
+                    </video>
+                </div>
+                <p class="video-description">Descoperiți colecția noastră de bijuterii de lux, fiecare piesă fiind creată manual cu meticulozitate și pasiune.</p>
+            </section>
+        </main>
+        <%- include('../fragmente/footer') %>
+    </div>
+</body>
+</html> 

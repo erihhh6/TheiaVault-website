@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <title><%= titlu %></title>
+    <%- include('../fragmente/head') %>
+    <style>
+        .error-container {
+            text-align: center;
+            padding: 2rem;
+        }
+        .error-image {
+            max-width: 100%;
+            height: auto;
+            margin: 1rem 0;
+        }
+        .error-debug {
+            background-color: #f8f9fa;
+            border: 1px solid #dee2e6;
+            padding: 1rem;
+            margin-top: 2rem;
+            font-family: monospace;
+            text-align: left;
+        }
+    </style>
+</head>
+<body>
+    <div class="grid-container">
+        <%- include('../fragmente/header') %>
+        <main>
+            <section class="error-container">
+                <h2><%= titlu %></h2>
+                <p><%= text %></p>
+                
+                <% if (imagine) { %>
+                    <img class="error-image" src="<%= imagine %>" alt="Imagine eroare">
+                    <p class="error-debug">Image path: <%= imagine %></p>
+                <% } else { %>
+                    <p>No image available for this error.</p>
+                <% } %>
+            </section>
+        </main>
+        <%- include('../fragmente/footer') %>
+    </div>
+</body>
+</html> 

@@ -1,0 +1,32 @@
+.video-container {
+    display: flex;
+    justify-content: center;
+    margin: var(--spatiere) 0;
+}
+
+.video-player {
+    width: 80%;
+    min-width: 300px;
+    max-width: 800px;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+}
+
+.video-description {
+    text-align: center;
+    margin: var(--spatiere) 0;
+    font-size: var(--font-size-base);
+    color: var(--culoare-text);
+    font-style: italic;
+}
+
+::cue {
+    background-color: transparent;
+    color: transparent;
+    background-image: linear-gradient(45deg, var(--culoare-principala), var(--culoare-accent), var(--culoare-secundara));
+    -webkit-background-clip: text;
+    background-clip: text;
+    font-weight: bold;
+    line-height: 1.5;
+    font-size: var(--font-size-base);
+} 

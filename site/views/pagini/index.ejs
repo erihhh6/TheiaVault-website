@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <title>TheiaVault</title>
+    <%- include('../fragmente/head') %>
+</head>
+<body>
+    <div id="banner-print-container">
+        <p class="banner-print">Acesta este un proiect școlar!</p>
+    </div>
+    <div class="grid-container">
+        <%- include('../fragmente/header') %>
+        <main>
+            <section id="zona1">
+                <h2>Despre Bijuterii</h2>
+                <section id="subzona1">
+                    <h3>De ce sunt bijuteriile atât de speciale?</h3>
+                    <p>De ce sunt <b>bijuteriile</b> atât de speciale? Pentru că fiecare piesă spune o poveste, poartă o emoție și devine o parte din viața celui care o poartă. Credem că bijuteria este mai mult decât un accesoriu -- este o expresie a personalității, un amintesc de momente prețioase și o modalitate de a te conecta cu lumea din jur.</p>
+
+                    <blockquote>
+                        <p>"Bijuteria este arta de a transforma metalele și pietrele prețioase în emoții purtabile."</p>
+                    </blockquote>
+
+                    <p>Bijuteria este o formă de <i>artă</i> care se remarcă prin <i>design</i> și <i>craftsmanship</i>.</p>
+
+                    <p><strong>Atenție:</strong> Asigurați-vă că alegeți bijuterii autentice pentru a evita produsele contrafăcute.</p>
+
+                    <p>De la inele delicate până la coliere statement, fiecare piesă din colecția noastră este creată cu pasiune și atenție la detalii. Ne inspirăm din frumusețea naturii, din arta istorică și din tendințele moderne, pentru a aduce în fața ta bijuterii unice care să te reprezinte.</p>
+                        
+                    <p>Indiferent dacă cauți ceva subtil pentru zi de zi sau o bijuterie care să facă senzație la un eveniment special, suntem aici să te ajutăm să găsești piesa perfectă. Explorează colecția noastră și lasă-te inspirat de magia bijuteriilor care așteaptă să devină parte din povestea ta.</p>
+
+                    <p>Pentru mai multe informații despre bijuterii, vizitați <a href="https://www.gia.edu" target="_blank" rel="noopener noreferrer">GIA (Gemological Institute of America)</a>.</p>
+
+                    <p>Descărcați catalogul nostru: <a href="/catalog.pdf" download>Catalog PDF</a>.</p>
+                    <object data="/catalog.pdf" style="max-width:100%; height:auto; max-height:500px;"> </object>
+                </section>
+            </section>
+            <section id="zona2">
+                <h2>Despre Noi</h2>
+                <section id="subzona2">
+                    <h3>Colecția Noastră</h3>
+                    <p>La <b>Theia Vault</b>, colecția noastră de bijuterii este creată cu pasiune și atenție la detalii. Fiecare piesă este inspirată din frumusețea naturii, din arta istorică și din tendințele moderne, oferind o combinație perfectă între eleganță și originalitate. De la inele delicate până la coliere statement, fiecare bijuterie este proiectată să spună o poveste și să devină o parte prețioasă din viața celui care o poartă.</p>
+                    <p>Explorează colecția noastră și descoperă piese unice care să te reprezinte și să completeze stilul tău în orice ocazie.</p>
+
+                    <figure>
+                        <picture>
+                            <source media="(max-width: 600px)" srcset="/img/bijuterie-mica.jpg">
+                            <source media="(max-width: 1200px)" srcset="/img/bijuterie-medie.jpg">
+                            <img src="/img/bijuterie-mare.jpg" style="width: 25%;">
+                        </picture>
+                        <figcaption>Bijuterie unică din colecția noastră</figcaption>
+                    </figure>
+
+                    <dl>
+                        <dt>Brățară pandantiv</dt>
+                        <dd>O brățară elegantă cu un pandantiv personalizat.</dd>
+                        <dt>Cercei cu diamante</dt>
+                        <dd>Cercei rafinați, perfecti pentru ocazii speciale.</dd>
+                        <dt>Lanț de aur</dt>
+                        <dd>Un lanț subțire și delicat, ideal pentru purtare zilnică.</dd>
+                    </dl>
+                    <img src="/img2/bracelet1.jpg" alt="Bijuterie unică" usemap="#bijuterii-map" style="max-width:100%; height:auto;">
+                    <map name="bijuterii-map">
+                        <area shape="circle" coords="150,250,100" href="#header" alt="Înapoi sus">
+                        <area shape="circle" coords="350,250,100" href="#footer" alt="Contact">
+                    </map>
+                </section>
+            </section>
+            
+            <section id="zona6">
+                <aside>
+                    <h2>Știai că?</h2>
+                    <p>Bijuteriile au fost folosite de-a lungul istoriei nu doar ca accesorii de modă, ci și ca simboluri de statut și protecție spirituală.</p>
+                </aside>
+
+                <details>
+                    <summary>Care este politica de returnare?</summary>
+                    <p>Acceptăm returnări în termen de 14 zile de la achiziție, cu bon fiscal.</p>
+                </details>
+                <details>
+                    <summary>Oferiți servicii de personalizare?</summary>
+                    <p>Da, putem personaliza bijuterii conform cerințelor dumneavoastră.</p>
+                </details>
+                <details>
+                    <summary>Există discount aplicat produselor?</summary>
+                    <p>Desigur,la dispoziția dumneavoastră se află codul nostru de reducere <b>THEIAVAULT10</b>.</p>
+                    <p>Calculați noul preț folosind formula:</p>
+                        <math xmlns="http://www.w3.org/1998/Math/MathML">
+                            <mo>=</mo>
+                            <mi>Preț inițial</mi>
+                            <mo>×</mo>
+                            <mfrac>
+                                <mi>100 - Procent discount</mi>
+                                <mn>100</mn>
+                            </mfrac>
+                        </math>
+                </details>
+            </section>
+
+            <section id="zona3">
+                <div class="tabel-container">
+                    <table>
+                        <caption>Evenimente importante</caption>
+                        <thead>
+                            <tr>
+                                <th>Eveniment</th>
+                                <th>Data</th>
+                                <th>Locație</th>
+                                <th>Descriere</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Lansare colecție nouă</td>
+                                <td>15 Noiembrie 2025</td>
+                                <td>București</td>
+                                <td>Lansarea noii colecții de bijuterii unice.</td>
+                            </tr>
+                            <tr>
+                                <td>Workshop design bijuterii</td>
+                                <td>22 Noiembrie 2025</td>
+                                <td>Cluj-Napoca</td>
+                                <td>Workshop pentru pasionații de design de bijuterii.</td>
+                            </tr>
+                            <tr>
+                                <td>Expoziție internațională</td>
+                                <td>30 Noiembrie 2025</td>
+                                <td>Paris</td>
+                                <td>Participarea la expoziția internațională de bijuterii.</td>
+                            </tr>
+                            <tr>
+                                <td>Promoție de sărbători</td>
+                                <td>15 Decembrie 2025</td>
+                                <td>Online</td>
+                                <td>Promoții speciale pentru sărbători.</td>
+                            </tr>
+                        </tbody>
+                        <tfoot>
+                            <tr>
+                                <td colspan="4">Total evenimente: 4</td>
+                            </tr>
+                        </tfoot>
+                    </table>
+                </div>
+            </section>
+
+            <section id="zona4">
+                <h2>Anunțuri</h2>
+                <div class="placeholder">
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. In consequuntur possimus sed animi incidunt officia, molestias ex corrupti sequi non aliquid quisquam praesentium nemo corporis quis commodi odio quibusdam! Temporibus!</p>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. In consequuntur possimus sed animi incidunt officia, molestias ex corrupti sequi non aliquid quisquam praesentium nemo corporis quis commodi odio quibusdam! Temporibus!</p>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. In consequuntur possimus sed animi incidunt officia, molestias ex corrupti sequi non aliquid quisquam praesentium nemo corporis quis commodi odio quibusdam! Temporibus!</p>
+                </div>
+            </section>
+
+            <section id="zona5">
+                <h2>Utilizatori Online</h2>
+                <div class="user-info">
+                    <p><strong>IP-ul dumneavoastră:</strong> <%= locals.ip || "::1" %></p>
+                    <p><em>Notă: Când site-ul rulează local, IP-ul afișat va fi localhost (::1).</em></p>
+                    
+                    <div class="online-stats">
+                        <p><strong>Utilizatori activi:</strong> 1</p>
+                        <p><strong>Ultima activitate:</strong> <%= new Date().toLocaleString('ro-RO') %></p>
+                    </div>
+                </div>
+            </section>
+
+            <section id="zona7">
+                <h2>Server Status</h2>
+                <div class="placeholder">
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. In consequuntur possimus sed animi incidunt officia, molestias ex corrupti sequi non aliquid quisquam praesentium nemo corporis quis commodi odio quibusdam! Temporibus!</p>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. In consequuntur possimus sed animi incidunt officia, molestias ex corrupti sequi non aliquid quisquam praesentium nemo corporis quis commodi odio quibusdam! Temporibus!</p>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. In consequuntur possimus sed animi incidunt officia, molestias ex corrupti sequi non aliquid quisquam praesentium nemo corporis quis commodi odio quibusdam! Temporibus!</p>
+                </div>
+            </section>
+
+            <section id="zona8">
+                <h2>DIVERSE</h2>
+                <div class="placeholder">
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. In consequuntur possimus sed animi incidunt officia, molestias ex corrupti sequi non aliquid quisquam praesentium nemo corporis quis commodi odio quibusdam! Temporibus!</p>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. In consequuntur possimus sed animi incidunt officia, molestias ex corrupti sequi non aliquid quisquam praesentium nemo corporis quis commodi odio quibusdam! Temporibus!</p>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. In consequuntur possimus sed animi incidunt officia, molestias ex corrupti sequi non aliquid quisquam praesentium nemo corporis quis commodi odio quibusdam! Temporibus!</p>
+                </div>
+            </section>
+        </main>
+
+        <%- include('../fragmente/footer') %>
+    </div>
+</body>
+</html> 

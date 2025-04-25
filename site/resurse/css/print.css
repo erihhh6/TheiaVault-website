@@ -1,0 +1,134 @@
+@media screen {
+    #banner-print-container {
+        display: none; 
+    }
+}
+
+@media print {
+    @page :first {
+        margin-top: 2.5cm;
+    }
+    
+    #banner-print-container {
+        display: block ;
+        position: absolute ;
+        top: 1cm ;
+        left: 10% ;
+        width: 80% ;
+        z-index: 9999 ;
+        background-color: white ;
+        padding: 0 ;
+        margin: 0 ;
+        visibility: visible ;
+        opacity: 1 ;
+        -webkit-print-color-adjust: exact ;
+        print-color-adjust: exact ;
+    }
+    
+    .banner-print {
+        display: block ;
+        text-align: center ;
+        border: 2px dotted black ;
+        padding: 10px ;
+        font-weight: bold ;
+        font-size: 1.2rem ;
+        background-color: white ;
+        margin: 0 ;
+        visibility: visible ;
+        opacity: 1 ;
+    }
+    
+    .banner-print-footer {
+        display: none ;
+    }
+    
+    footer .banner-print {
+        display: none ;
+    }
+    
+    img, video, iframe, object, picture, .taburi-iframe, figure, figcaption,
+    .container-iframe, .back-to-top, nav, .hamburger-menu, .video-wrapper,
+    .font-awesome-icons, .placeholder {
+        display: none ;
+    }
+    
+    .grid-container {
+        display: block ;
+        grid-template-areas: none ;
+    }
+    
+    header {
+        height: 80vh;
+        display: flex ;
+        justify-content: center;
+        align-items: center;
+        margin: 0;
+        padding: 0;
+    }
+    
+    header h1 {
+        display: block ;
+        text-align: center;
+        font-size: 2.5em ; 
+        text-decoration: underline ;
+        border-bottom: 1px solid black; 
+        margin: 0 auto;
+        padding: 10px 0;
+        page-break-after: always;
+        break-after: page;
+    }
+    
+    header > *:not(h1) {
+        display: none ;
+    }
+    
+    a, a:link, a:visited, a:hover, a:active {
+        text-decoration: none ;
+        color: black ;
+    }
+    
+    footer {
+        page-break-before: always;
+        break-before: page;
+    }
+    
+    body::after {
+        content: "Oprea Eric";
+        position: fixed;
+        bottom: 3cm;
+        right: 3cm;
+        width: 100px;
+        height: 2cm;
+        border: 4px double black;
+        opacity: 0.65;
+        display: flex ;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        z-index: 1000;
+        transform: rotate(-45deg);
+        background-color: white;
+        font-size: 14pt;
+    }
+    
+    @page :left {
+        margin-left: 2.5cm;
+        margin-right: 0.5cm;
+    }
+    
+    @page :right {
+        margin-left: 0.5cm;
+        margin-right: 2.5cm;
+    }
+    
+    body {
+        background-color: white;
+        font-size: 12pt;
+        line-height: 1.5;
+    }
+    
+    p, h2, h3, h4, h5, h6, li, td, th, dt, dd, blockquote, address {
+        color: black ;
+    }
+
+} 

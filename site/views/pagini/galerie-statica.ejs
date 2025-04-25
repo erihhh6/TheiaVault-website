@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="ro">
+    <%- include("../fragmente/head") %>
+    <link rel="stylesheet" href="/css/galerie-statica.css">
+    <body>
+        <%- include("../fragmente/header") %>
+        <main>
+            <h1>Galerie de bijuterii</h1>
+            
+            <p class="descriere-galerie">
+                Vă prezentăm o selecție dintre cele mai frumoase bijuterii din colecțiile noastre. 
+                Acestea sunt fabricate cu cea mai mare atenție la detalii, folosind materiale de cea mai bună calitate.
+                Galeria afișează automat bijuteriile corespunzătoare sfertului de oră curent.
+            </p>
+            
+            <div class="container-galerie">
+                <h2>Galeria noastră de bijuterii</h2>
+                
+                <div class="sfert-ora-info">
+                    <% 
+                    const now = new Date();
+                    const minutes = now.getMinutes();
+                    let currentQuarter;
+                    
+                    if(minutes < 15) {
+                        currentQuarter = 1;
+                    } else if(minutes < 30) {
+                        currentQuarter = 2;
+                    } else if(minutes < 45) {
+                        currentQuarter = 3;
+                    } else {
+                        currentQuarter = 4;
+                    }
+                    %>
+                    <p>Sfertul de oră curent: <strong><%= currentQuarter %></strong> (<%= 
+                        currentQuarter === 1 ? "XX:00 - XX:14" : 
+                        currentQuarter === 2 ? "XX:15 - XX:29" : 
+                        currentQuarter === 3 ? "XX:30 - XX:44" : 
+                        "XX:45 - XX:59" %>)</p>
+                </div>
+                
+                <div class="grid-galerie" id="grid-galerie">
+                    <!-- Handle No Images case -->
+                    <% 
+                    // Filter images by current quarter
+                    const filteredImages = locals.imagini.filter(img => img.sfert_ora === currentQuarter);
+                    
+                    // Helper function to get image file name from path
+                    function getImageName(path) {
+                        return path.split('/').pop().split('.')[0];
+                    }
+                    
+                    // If no images match the current quarter, show a message
+                    if(filteredImages.length === 0) {
+                    %>
+                        <div style="grid-column: 1 / span 3; text-align: center; padding: 50px 0;">
+                            <h3>Nu există bijuterii pentru sfertul de oră curent</h3>
+                            <p>Vă rugăm să reveniți mai târziu.</p>
+                        </div>
+                    <% } else { %>
+                        <!-- Image in position 1,1 -->
+                        <article class="imagine-container pos-1-1">
+                            <figure>
+                                <picture>
+                                    <source media="(max-width: 600px)" srcset="<%= filteredImages[0].cale_imagine.replace('/resurse/', '/').replace('.jpg', '-small.jpg') %>">
+                                    <source media="(max-width: 1024px)" srcset="<%= filteredImages[0].cale_imagine.replace('/resurse/', '/').replace('.jpg', '-medium.jpg') %>">
+                                    <img src="<%= filteredImages[0].cale_imagine.replace('/resurse/', '/') %>" 
+                                         alt="<%= filteredImages[0].alt || getImageName(filteredImages[0].cale_imagine) %>" 
+                                         title="<%= filteredImages[0].descriere %>">
+                                </picture>
+                                <figcaption><%= filteredImages[0].titlu %> - <%= filteredImages[0].descriere %></figcaption>
+                            </figure>
+                        </article>
+                        
+                        <!-- Image in position 1,2 -->
+                        <article class="imagine-container pos-1-2">
+                            <figure>
+                                <picture>
+                                    <source media="(max-width: 600px)" srcset="<%= filteredImages[1 % filteredImages.length].cale_imagine.replace('/resurse/', '/').replace('.jpg', '-small.jpg') %>">
+                                    <source media="(max-width: 1024px)" srcset="<%= filteredImages[1 % filteredImages.length].cale_imagine.replace('/resurse/', '/').replace('.jpg', '-medium.jpg') %>">
+                                    <img src="<%= filteredImages[1 % filteredImages.length].cale_imagine.replace('/resurse/', '/') %>" 
+                                         alt="<%= filteredImages[1 % filteredImages.length].alt || getImageName(filteredImages[1 % filteredImages.length].cale_imagine) %>" 
+                                         title="<%= filteredImages[1 % filteredImages.length].descriere %>">
+                                </picture>
+                                <figcaption><%= filteredImages[1 % filteredImages.length].titlu %> - <%= filteredImages[1 % filteredImages.length].descriere %></figcaption>
+                            </figure>
+                        </article>
+                        
+                        <!-- Image in position 1,3 -->
+                        <article class="imagine-container pos-1-3">
+                            <figure>
+                                <picture>
+                                    <source media="(max-width: 600px)" srcset="<%= filteredImages[2 % filteredImages.length].cale_imagine.replace('/resurse/', '/').replace('.jpg', '-small.jpg') %>">
+                                    <source media="(max-width: 1024px)" srcset="<%= filteredImages[2 % filteredImages.length].cale_imagine.replace('/resurse/', '/').replace('.jpg', '-medium.jpg') %>">
+                                    <img src="<%= filteredImages[2 % filteredImages.length].cale_imagine.replace('/resurse/', '/') %>" 
+                                         alt="<%= filteredImages[2 % filteredImages.length].alt || getImageName(filteredImages[2 % filteredImages.length].cale_imagine) %>" 
+                                         title="<%= filteredImages[2 % filteredImages.length].descriere %>">
+                                </picture>
+                                <figcaption><%= filteredImages[2 % filteredImages.length].titlu %> - <%= filteredImages[2 % filteredImages.length].descriere %></figcaption>
+                            </figure>
+                        </article>
+                        
+                        <!-- Image in position 2,1 -->
+                        <article class="imagine-container pos-2-1">
+                            <figure>
+                                <picture>
+                                    <source media="(max-width: 600px)" srcset="<%= filteredImages[3 % filteredImages.length].cale_imagine.replace('/resurse/', '/').replace('.jpg', '-small.jpg') %>">
+                                    <source media="(max-width: 1024px)" srcset="<%= filteredImages[3 % filteredImages.length].cale_imagine.replace('/resurse/', '/').replace('.jpg', '-medium.jpg') %>">
+                                    <img src="<%= filteredImages[3 % filteredImages.length].cale_imagine.replace('/resurse/', '/') %>" 
+                                         alt="<%= filteredImages[3 % filteredImages.length].alt || getImageName(filteredImages[3 % filteredImages.length].cale_imagine) %>" 
+                                         title="<%= filteredImages[3 % filteredImages.length].descriere %>">
+                                </picture>
+                                <figcaption><%= filteredImages[3 % filteredImages.length].titlu %> - <%= filteredImages[3 % filteredImages.length].descriere %></figcaption>
+                            </figure>
+                        </article>
+                        
+                        <!-- Empty cell in position 2,2 -->
+                        <div class="empty-cell pos-2-2">
+                            <span>Spațiu rezervat</span>
+                        </div>
+                        
+                        <!-- Image in position 2,3 -->
+                        <article class="imagine-container pos-2-3">
+                            <figure>
+                                <picture>
+                                    <source media="(max-width: 600px)" srcset="<%= filteredImages[4 % filteredImages.length].cale_imagine.replace('/resurse/', '/').replace('.jpg', '-small.jpg') %>">
+                                    <source media="(max-width: 1024px)" srcset="<%= filteredImages[4 % filteredImages.length].cale_imagine.replace('/resurse/', '/').replace('.jpg', '-medium.jpg') %>">
+                                    <img src="<%= filteredImages[4 % filteredImages.length].cale_imagine.replace('/resurse/', '/') %>" 
+                                         alt="<%= filteredImages[4 % filteredImages.length].alt || getImageName(filteredImages[4 % filteredImages.length].cale_imagine) %>" 
+                                         title="<%= filteredImages[4 % filteredImages.length].descriere %>">
+                                </picture>
+                                <figcaption><%= filteredImages[4 % filteredImages.length].titlu %> - <%= filteredImages[4 % filteredImages.length].descriere %></figcaption>
+                            </figure>
+                        </article>
+                        
+                        <!-- Image in position 3,1 -->
+                        <article class="imagine-container pos-3-1">
+                            <figure>
+                                <picture>
+                                    <source media="(max-width: 600px)" srcset="<%= filteredImages[5 % filteredImages.length].cale_imagine.replace('/resurse/', '/').replace('.jpg', '-small.jpg') %>">
+                                    <source media="(max-width: 1024px)" srcset="<%= filteredImages[5 % filteredImages.length].cale_imagine.replace('/resurse/', '/').replace('.jpg', '-medium.jpg') %>">
+                                    <img src="<%= filteredImages[5 % filteredImages.length].cale_imagine.replace('/resurse/', '/') %>" 
+                                         alt="<%= filteredImages[5 % filteredImages.length].alt || getImageName(filteredImages[5 % filteredImages.length].cale_imagine) %>" 
+                                         title="<%= filteredImages[5 % filteredImages.length].descriere %>">
+                                </picture>
+                                <figcaption><%= filteredImages[5 % filteredImages.length].titlu %> - <%= filteredImages[5 % filteredImages.length].descriere %></figcaption>
+                            </figure>
+                        </article>
+                        
+                        <!-- Empty cell in position 3,2 -->
+                        <div class="empty-cell pos-3-2">
+                            <span>Spațiu rezervat</span>
+                        </div>
+                        
+                        <!-- Image in position 3,3 -->
+                        <article class="imagine-container pos-3-3">
+                            <figure>
+                                <picture>
+                                    <source media="(max-width: 600px)" srcset="<%= filteredImages[6 % filteredImages.length].cale_imagine.replace('/resurse/', '/').replace('.jpg', '-small.jpg') %>">
+                                    <source media="(max-width: 1024px)" srcset="<%= filteredImages[6 % filteredImages.length].cale_imagine.replace('/resurse/', '/').replace('.jpg', '-medium.jpg') %>">
+                                    <img src="<%= filteredImages[6 % filteredImages.length].cale_imagine.replace('/resurse/', '/') %>" 
+                                         alt="<%= filteredImages[6 % filteredImages.length].alt || getImageName(filteredImages[6 % filteredImages.length].cale_imagine) %>" 
+                                         title="<%= filteredImages[6 % filteredImages.length].descriere %>">
+                                </picture>
+                                <figcaption><%= filteredImages[6 % filteredImages.length].titlu %> - <%= filteredImages[6 % filteredImages.length].descriere %></figcaption>
+                            </figure>
+                        </article>
+                        
+                        <!-- Image in position 4,1 -->
+                        <article class="imagine-container pos-4-1">
+                            <figure>
+                                <picture>
+                                    <source media="(max-width: 600px)" srcset="<%= filteredImages[7 % filteredImages.length].cale_imagine.replace('/resurse/', '/').replace('.jpg', '-small.jpg') %>">
+                                    <source media="(max-width: 1024px)" srcset="<%= filteredImages[7 % filteredImages.length].cale_imagine.replace('/resurse/', '/').replace('.jpg', '-medium.jpg') %>">
+                                    <img src="<%= filteredImages[7 % filteredImages.length].cale_imagine.replace('/resurse/', '/') %>" 
+                                         alt="<%= filteredImages[7 % filteredImages.length].alt || getImageName(filteredImages[7 % filteredImages.length].cale_imagine) %>" 
+                                         title="<%= filteredImages[7 % filteredImages.length].descriere %>">
+                                </picture>
+                                <figcaption><%= filteredImages[7 % filteredImages.length].titlu %> - <%= filteredImages[7 % filteredImages.length].descriere %></figcaption>
+                            </figure>
+                        </article>
+                        
+                        <!-- Image in position 4,2 -->
+                        <article class="imagine-container pos-4-2">
+                            <figure>
+                                <picture>
+                                    <source media="(max-width: 600px)" srcset="<%= filteredImages[8 % filteredImages.length].cale_imagine.replace('/resurse/', '/').replace('.jpg', '-small.jpg') %>">
+                                    <source media="(max-width: 1024px)" srcset="<%= filteredImages[8 % filteredImages.length].cale_imagine.replace('/resurse/', '/').replace('.jpg', '-medium.jpg') %>">
+                                    <img src="<%= filteredImages[8 % filteredImages.length].cale_imagine.replace('/resurse/', '/') %>" 
+                                         alt="<%= filteredImages[8 % filteredImages.length].alt || getImageName(filteredImages[8 % filteredImages.length].cale_imagine) %>" 
+                                         title="<%= filteredImages[8 % filteredImages.length].descriere %>">
+                                </picture>
+                                <figcaption><%= filteredImages[8 % filteredImages.length].titlu %> - <%= filteredImages[8 % filteredImages.length].descriere %></figcaption>
+                            </figure>
+                        </article>
+                        
+                        <!-- Image in position 4,3 -->
+                        <article class="imagine-container pos-4-3">
+                            <figure>
+                                <picture>
+                                    <source media="(max-width: 600px)" srcset="<%= filteredImages[9 % filteredImages.length].cale_imagine.replace('/resurse/', '/').replace('.jpg', '-small.jpg') %>">
+                                    <source media="(max-width: 1024px)" srcset="<%= filteredImages[9 % filteredImages.length].cale_imagine.replace('/resurse/', '/').replace('.jpg', '-medium.jpg') %>">
+                                    <img src="<%= filteredImages[9 % filteredImages.length].cale_imagine.replace('/resurse/', '/') %>" 
+                                         alt="<%= filteredImages[9 % filteredImages.length].alt || getImageName(filteredImages[9 % filteredImages.length].cale_imagine) %>" 
+                                         title="<%= filteredImages[9 % filteredImages.length].descriere %>">
+                                </picture>
+                                <figcaption><%= filteredImages[9 % filteredImages.length].titlu %> - <%= filteredImages[9 % filteredImages.length].descriere %></figcaption>
+                            </figure>
+                        </article>
+                    <% } %>
+                </div>
+            </div>
+        </main>
+        <%- include("../fragmente/footer") %>
+    </body>
+</html> 

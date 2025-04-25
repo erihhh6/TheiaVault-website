@@ -1,0 +1,38 @@
+{
+    "cale_baza": "/imagini/erori",
+    "eroare_default": {
+      "titlu": "Eroare necunoscută",
+      "text": "A apărut o eroare necunoscută. Vă rugăm să încercați din nou mai târziu.",
+      "imagine": "default.png"
+    },
+    "info_erori": [
+      {
+        "identificator": 404,
+        "status": true,
+        "titlu": "Pagina nu a fost găsită",
+        "text": "Ne pare rău, pagina pe care o căutați nu a fost găsită.",
+        "imagine": "404.png"
+      },
+      {
+        "identificator": 403,
+        "status": true,
+        "titlu": "Acces interzis",
+        "text": "Nu aveți permisiunea de a accesa acest director.",
+        "imagine": "403.png"
+      },
+      {
+        "identificator": 400,
+        "status": true,
+        "titlu": "Cerere incorectă",
+        "text": "Cererea dvs. nu poate fi procesată deoarece este incorectă.",
+        "imagine": "400.png"
+      },
+      {
+        "identificator": 500,
+        "status": true,
+        "titlu": "Eroare internă a serverului",
+        "text": "A apărut o eroare internă a serverului. Vă rugăm să încercați din nou mai târziu.",
+        "imagine": "500.png"
+      }
+    ]
+  }

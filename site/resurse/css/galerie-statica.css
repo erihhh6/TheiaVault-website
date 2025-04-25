@@ -1,0 +1,139 @@
+.grid-galerie {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(4, auto);
+    gap: 20px;
+    counter-reset: imagine-index;
+    width: 100%;
+}
+
+.imagine-container {
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    overflow: hidden;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    transition: transform 1.2s, border-width 1.2s, box-shadow 1.2s;
+}
+
+/* Hover effect for image containers */
+.imagine-container:hover {
+    transform: scale(1.25) rotate(-10deg);
+    border-width: 5px;
+    box-shadow: 0 8px 15px rgba(0,0,0,0.2);
+    z-index: 10; /* Make sure the scaled image appears above other content */
+}
+
+figure {
+    margin: 0;
+    padding: 0;
+    position: relative;
+}
+
+figure img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+figcaption {
+    padding: 10px;
+    background: rgba(255,255,255,0.9);
+}
+
+figcaption::before {
+    counter-increment: imagine-index;
+    content: counter(imagine-index, upper-roman) ". ";
+    font-weight: bold;
+}
+
+.info-imagine {
+    padding: 10px;
+    background: rgba(255,255,255,0.9);
+}
+
+.empty-cell {
+    background-color: #f5f5f5;
+    border: 1px dashed #ccc;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 200px;
+}
+
+/* Define grid positions explicitly */
+.pos-1-1 { grid-area: 1 / 1; }
+.pos-1-2 { grid-area: 1 / 2; }
+.pos-1-3 { grid-area: 1 / 3; }
+.pos-2-1 { grid-area: 2 / 1; }
+.pos-2-2 { grid-area: 2 / 2; } /* This should be empty cell */
+.pos-2-3 { grid-area: 2 / 3; }
+.pos-3-1 { grid-area: 3 / 1; }
+.pos-3-2 { grid-area: 3 / 2; } /* This should be empty cell */
+.pos-3-3 { grid-area: 3 / 3; }
+.pos-4-1 { grid-area: 4 / 1; }
+.pos-4-2 { grid-area: 4 / 2; }
+.pos-4-3 { grid-area: 4 / 3; }
+
+.sfert-ora-info {
+    margin: 20px 0;
+    padding: 10px;
+    background-color: #f0f0f0;
+    border-radius: 5px;
+    text-align: center;
+    font-size: 1.2em;
+}
+
+/* Full width container styles */
+.container-galerie {
+    width: 100%;
+    max-width: 100%;
+    padding: 0 20px;
+    box-sizing: border-box;
+}
+
+.container-galerie h2 {
+    text-align: center;
+    margin-bottom: 30px;
+    color: #333;
+}
+
+/* Adjust main content for full width */
+main {
+    width: 100%;
+    max-width: 100%;
+    padding: 0;
+}
+
+/* Improve responsive behavior */
+@media (max-width: 1200px) {
+    .grid-galerie {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .pos-1-1 { grid-area: auto; }
+    .pos-1-2 { grid-area: auto; }
+    .pos-1-3 { grid-area: auto; }
+    .pos-2-1 { grid-area: auto; }
+    .pos-2-2 { grid-area: auto; }
+    .pos-2-3 { grid-area: auto; }
+    .pos-3-1 { grid-area: auto; }
+    .pos-3-2 { grid-area: auto; }
+    .pos-3-3 { grid-area: auto; }
+    .pos-4-1 { grid-area: auto; }
+    .pos-4-2 { grid-area: auto; }
+    .pos-4-3 { grid-area: auto; }
+    
+    .empty-cell {
+        display: none;
+    }
+}
+
+@media (max-width: 768px) {
+    .grid-galerie {
+        grid-template-columns: 1fr;
+    }
+    
+    .imagine-container:hover {
+        transform: scale(1.15) rotate(-5deg);
+    }
+} 

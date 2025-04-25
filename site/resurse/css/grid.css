@@ -1,0 +1,94 @@
+.grid-container {
+    display: grid;
+    grid-template-areas:
+        "header header header header"
+        "zona1 zona1 zona1 zona1"
+        "zona1 zona1 zona1 zona1"
+        "zona3 zona2 zona2 zona4"
+        "zona5 zona2 zona2 zona4"
+        "zona5 zona6 zona6 zona7"
+        "zona8 zona8 zona8 zona8"
+        "footer footer footer footer";
+    gap: var(--spatiere);
+    max-width: 100%;
+    box-sizing: border-box;
+}
+
+#header { grid-area: header; }
+#zona1 { grid-area: zona1; }
+#zona2 { grid-area: zona2; }
+#zona3 { grid-area: zona3; }
+#zona4 { grid-area: zona4; }
+#zona5 { grid-area: zona5; }
+#zona6 { grid-area: zona6; }
+#zona7 { grid-area: zona7; }
+#zona8 { grid-area: zona8; }
+#footer { grid-area: footer; }
+
+.grid-container > main {
+    display: contents; 
+}
+
+#zona1, #zona2, #zona3, #zona4, #zona5, #zona6, #zona7, #zona8 {
+    padding: var(--spatiere);
+    padding-left: var(--spatiere-laterala);
+    padding-right: var(--spatiere-laterala);
+    background-color: var(--culoare-background);
+    border: 1px solid var(--culoare-border);
+    border-radius: 8px;
+}
+
+.placeholder {
+    background-color: rgba(255,255,255,0.2);
+    padding: 15px;
+    border-radius: 5px;
+    margin-top: 15px;
+}
+
+#zona3 {
+    overflow: hidden;
+}
+
+@media (max-width: 1200px) {
+    .grid-container {
+        grid-template-areas:
+            "header header header header"
+            "zona1 zona1 zona1 zona1"
+            "zona2 zona2 zona2 zona2"
+            "zona3 zona4 zona5 zona5"
+            "zona6 zona6 zona7 zona7"
+            "zona8 zona8 zona8 zona8"
+            "footer footer footer footer";
+    }
+    
+    body {
+        font-size: 15px;
+    }
+}
+
+@media (max-width: 768px) {
+    .grid-container {
+        grid-template-columns: 1fr;
+        grid-template-areas:
+            "header"
+            "zona1"
+            "zona2"
+            "zona3"
+            "zona4"
+            "zona5"
+            "zona6"
+            "zona7"
+            "zona8"
+            "footer";
+    }
+    
+    body {
+        font-size: 14px;
+    }
+    
+    * {
+        transition: none ;
+    }
+    
+  
+}

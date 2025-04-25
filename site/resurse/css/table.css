@@ -1,0 +1,76 @@
+.tabel-container {
+    margin: 20px 0;
+    border-radius: var(--border-radius-lg);
+    box-shadow: var(--box-shadow);
+    width: 100%;
+    max-width: 100%;
+    display: block;
+    overflow: hidden;
+}
+
+table {
+    border-collapse: collapse;
+    font-family: 'Playfair Display', serif;
+    background-color: var(--culoare-highlight);
+    color: var(--culoare-text);
+    border-radius: var(--border-radius);
+    margin: 0;
+    width: 100%;
+    min-width: auto;
+    table-layout: fixed;
+}
+
+table caption {
+    caption-side: top;
+    margin-top: 20px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: var(--culoare-principala);
+    padding: 0 10px;
+}
+
+table thead {
+    background-color: var(--culoare-principala);
+    color: var(--culoare-highlight);
+}
+
+table th,
+table td {
+    padding: 15px 10px;
+    text-align: center;
+    border: 2px solid rgb(0, 0, 0);
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+}
+
+table td:nth-child(odd) {
+    border-right: 2px solid var(--culoare-principala); 
+}
+
+table td:nth-child(even) {
+    border-right: 2px solid var(--culoare-accent);
+}
+
+table tbody tr {
+    background-color: var(--culoare-highlight);
+    transition: background-color 0.5s ease, transform 0.5s ease;
+}
+
+table tbody tr:hover {
+    background-color: var(--culoare-accent);
+    transform: scale(1.02);
+    box-shadow: 0 4px 8px rgb(0, 0, 0);
+}
+
+table tfoot {
+    background-color: var(--culoare-principala);
+    color: var(--culoare-highlight);
+    font-weight: bold;
+}
+
+@media (max-width: 1200px) {
+    table {
+    overflow: scroll;
+    display: block;
+    }
+}
