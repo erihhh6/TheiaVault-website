@@ -1,0 +1,6 @@
+node_modules/
+temp/
+desktop.ini
+*.log
+.vscode/
+.idea/
