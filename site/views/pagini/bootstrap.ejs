@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <title>Demo Bootstrap - TheiaVault</title>
+    <%- include('../fragmente/head') %>
+</head>
+<body>
+    <div id="banner-print-container">
+        <p class="banner-print">Acesta este un proiect școlar!</p>
+    </div>
+    <div class="grid-container">
+        <%- include('../fragmente/header') %>
+        <main>
+            <section class="bootstrap-demo container my-5">
+                <h1 class="text-primary mb-4">Demo Bootstrap Customizat</h1>
+                <p class="lead">Această pagină demonstrează customizarea Bootstrap conform schemei cromatice TheiaVault.</p>
+                
+                <div class="row mt-5">
+                    <div class="col-md-6">
+                        <h2>Culori Customizate</h2>
+                        <div class="p-3 mb-2 bg-primary text-white">Tema Primary</div>
+                        <div class="p-3 mb-2 bg-secondary text-white">Tema Secondary</div>
+                        <div class="p-3 mb-2 bg-info text-dark">Tema Info</div>
+                        <div class="p-3 mb-2 bg-danger text-white">Tema Danger</div>
+                        <div class="p-3 mb-2 bg-dark text-white">Tema Dark</div>
+                        <div class="p-3 mb-2 bg-light text-dark">Tema Light</div>
+                    </div>
+                    <div class="col-md-6">
+                        <h2>Butoane Customizate</h2>
+                        <div class="d-grid gap-2">
+                            <button class="btn btn-primary" type="button">Buton Primary</button>
+                            <button class="btn btn-secondary" type="button">Buton Secondary</button>
+                            <button class="btn btn-info" type="button">Buton Info</button>
+                            <button class="btn btn-danger" type="button">Buton Danger</button>
+                            <button class="btn btn-dark" type="button">Buton Dark</button>
+                            <button class="btn btn-light" type="button">Buton Light</button>
+                            <button class="btn btn-outline-primary" type="button">Buton Outline</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="row mt-5">
+                    <div class="col-lg-6">
+                        <h2>Card-uri Bootstrap</h2>
+                        <div class="row">
+                            <div class="col-md-6 mb-4">
+                                <div class="card h-100">
+                                    <div class="card-header bg-primary text-white">
+                                        Colier de Argint
+                                    </div>
+                                    <div class="card-body">
+                                        <h5 class="card-title">Colecția de Primăvară</h5>
+                                        <p class="card-text">Un colier elegant din argint sterling 925, perfect pentru ocazii speciale.</p>
+                                        <a href="#" class="btn btn-primary">Vezi detalii</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6 mb-4">
+                                <div class="card h-100">
+                                    <div class="card-header bg-secondary text-white">
+                                        Inel cu Diamant
+                                    </div>
+                                    <div class="card-body">
+                                        <h5 class="card-title">Colecția de Lux</h5>
+                                        <p class="card-text">Un inel superb cu diamant, realizat manual din aur de 18K.</p>
+                                        <a href="#" class="btn btn-secondary">Vezi detalii</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-lg-6">
+                        <h2>Alertă și Badge-uri</h2>
+                        <div class="alert alert-primary" role="alert">
+                            Noua colecție de vară este acum disponibilă! <span class="badge bg-secondary">Nou</span>
+                        </div>
+                        <div class="alert alert-danger" role="alert">
+                            Stoc limitat pentru colecția de primăvară! <span class="badge bg-primary">Reducere 15%</span>
+                        </div>
+                        
+                        <h2 class="mt-4">Progres și Navigație</h2>
+                        <p>Progresul comenzii tale:</p>
+                        <div class="progress mb-3">
+                            <div class="progress-bar bg-primary" role="progressbar" style="width: 75%" 
+                                 aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">75%</div>
+                        </div>
+                        
+                        <ul class="nav nav-tabs">
+                            <li class="nav-item">
+                                <a class="nav-link active" aria-current="page" href="#">Descriere</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Specificații</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Recenzii</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="row mt-5">
+                    <div class="col-12">
+                        <h2>Formulare Bootstrap</h2>
+                        <form class="row g-3">
+                            <div class="col-md-6">
+                                <label for="inputEmail4" class="form-label">Email</label>
+                                <input type="email" class="form-control" id="inputEmail4">
+                            </div>
+                            <div class="col-md-6">
+                                <label for="inputPassword4" class="form-label">Parola</label>
+                                <input type="password" class="form-control" id="inputPassword4">
+                            </div>
+                            <div class="col-12">
+                                <label for="inputAddress" class="form-label">Adresa</label>
+                                <input type="text" class="form-control" id="inputAddress" placeholder="Strada Exemplu 123">
+                            </div>
+                            <div class="col-md-6">
+                                <label for="inputCity" class="form-label">Oraș</label>
+                                <input type="text" class="form-control" id="inputCity">
+                            </div>
+                            <div class="col-md-4">
+                                <label for="inputState" class="form-label">Județ</label>
+                                <select id="inputState" class="form-select">
+                                    <option selected>Alege...</option>
+                                    <option>București</option>
+                                    <option>Cluj</option>
+                                    <option>Iași</option>
+                                    <option>Timiș</option>
+                                </select>
+                            </div>
+                            <div class="col-md-2">
+                                <label for="inputZip" class="form-label">Cod poștal</label>
+                                <input type="text" class="form-control" id="inputZip">
+                            </div>
+                            <div class="col-12">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="gridCheck">
+                                    <label class="form-check-label" for="gridCheck">
+                                        Accept termenii și condițiile
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <button type="submit" class="btn btn-primary">Trimite</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                
+                <div class="row mt-5">
+                    <div class="col-md-6">
+                        <h2>Breakpoint-uri Customizate</h2>
+                        <p>Am modificat breakpoint-urile pentru ecrane medii și mari:</p>
+                        <ul class="list-group">
+                            <li class="list-group-item bg-info">xs: 0px (default)</li>
+                            <li class="list-group-item">sm: 576px (default)</li>
+                            <li class="list-group-item bg-info">md: 850px (modificat de la 768px)</li>
+                            <li class="list-group-item">lg: 1100px (modificat de la 992px)</li>
+                            <li class="list-group-item bg-info">xl: 1400px (default)</li>
+                            <li class="list-group-item">xxl: 1800px (modificat de la 1400px)</li>
+                        </ul>
+                    </div>
+                    <div class="col-md-6">
+                        <h2>Alte Customizări</h2>
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title">Variabile Modificate</h5>
+                                <ul class="list-group list-group-flush">
+                                    <li class="list-group-item">Familia de font: Playfair Display</li>
+                                    <li class="list-group-item">Raze de border: 8px (standard), 12px (large)</li>
+                                    <li class="list-group-item">Dimensiune headinguri: h1 (2.8rem), h2 (2.2rem), etc.</li>
+                                    <li class="list-group-item">Spațierea paragrafelor: 1.2rem</li>
+                                    <li class="list-group-item">Înălțimea liniei (line-height): 1.7</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+        <%- include('../fragmente/footer') %>
+    </div>
+</body>
+</html> 

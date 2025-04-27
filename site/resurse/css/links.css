@@ -25,7 +25,7 @@ a[href^="http"]:hover::before {
 }
 
 main a {
-    background-image: radial-gradient(circle, var(--culoare-highlight) 0%, var(--culoare-highlight) 40%, transparent 80%, transparent 100%);
+    background-image: radial-gradient(ellipse at center, var(--culoare-highlight) 0%, var(--culoare-highlight) 40%, transparent 80%, transparent 100%);
     background-position: center;
     background-repeat: no-repeat;
     background-size: 0;

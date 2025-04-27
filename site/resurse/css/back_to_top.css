@@ -16,6 +16,7 @@
 .back-to-top:hover {
     background-color: var(--culoare-secundara);
     transform: scale(1.1);
+    opacity: 1;
 }
 
 .back-to-top .arrow {

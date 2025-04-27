@@ -1,0 +1,168 @@
+/* Stiluri pentru sectiunea de utilizatori online (zona5) */
+
+/* Import variables from general.css as SCSS variables */
+$culoare-principala: #2E3194;
+$culoare-secundara: #544BB8;
+$culoare-text: #2D2547;
+$culoare-highlight: #E3BACB;
+$culoare-accent: #C17DA7;
+$culoare-background: #ffffff;
+$culoare-border: #544BB8;
+$spatiere-laterala: 1%;
+$spatiere: 15px;
+$font-size-base: 1.1rem;
+$font-size-h1: 2.5rem;
+$font-size-h2: 2rem;
+$font-size-h3: 1.5rem;
+$font-size-small: 0.9rem;
+$border-radius: 8px;
+$border-radius-lg: 10px;
+$box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+$transition-speed: 0.3s;
+
+/* Styling for user-info section */
+.user-info {
+  background-color: rgba($culoare-highlight, 0.3);
+  border: 2px solid $culoare-border;
+  border-radius: $border-radius-lg;
+  padding: $spatiere * 1.5;
+  margin: $spatiere * 2 0;
+  box-shadow: $box-shadow;
+  transition: transform $transition-speed, box-shadow $transition-speed;
+  
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+  }
+  
+  p {
+    margin-bottom: $spatiere;
+    line-height: 1.6;
+    
+    strong {
+      color: $culoare-principala;
+      font-weight: bold;
+      font-size: $font-size-base * 1.1;
+    }
+    
+    em {
+      color: $culoare-text;
+      font-style: italic;
+      font-size: $font-size-small;
+    }
+  }
+  
+  /* Animation for the IP address */
+  strong + span {
+    position: relative;
+    
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: -2px;
+      left: 0;
+      width: 100%;
+      height: 2px;
+      background-color: $culoare-accent;
+      animation: pulse 2s infinite;
+    }
+  }
+}
+
+/* Styling for online-stats section */
+.online-stats {
+  background-color: rgba($culoare-principala, 0.15);
+  margin-top: $spatiere * 1.5;
+  padding: $spatiere * 1.2;
+  border-top: 2px dashed $culoare-border;
+  border-radius: 0 0 $border-radius $border-radius;
+  position: relative;
+  
+  &::before {
+    content: '👥';
+    position: absolute;
+    top: -15px;
+    right: 15px;
+    font-size: 24px;
+    background-color: $culoare-secundara;
+    color: $culoare-background;
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+    border-radius: 50%;
+  }
+  
+  p {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: $spatiere * 0.8;
+    
+    strong {
+      color: $culoare-secundara;
+      flex: 1;
+    }
+    
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}
+
+/* Section title styling */
+#zona5 h2 {
+  color: $culoare-principala;
+  font-size: $font-size-h2;
+  margin-bottom: $spatiere * 1.5;
+  position: relative;
+  display: inline-block;
+  
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: linear-gradient(to right, $culoare-principala, $culoare-accent);
+    border-radius: $border-radius;
+  }
+}
+
+/* Media queries for responsive design */
+@media (max-width: 768px) {
+  .user-info {
+    padding: $spatiere;
+  }
+  
+  .online-stats {
+    padding: $spatiere;
+    
+    p {
+      flex-direction: column;
+      align-items: flex-start;
+      
+      strong {
+        margin-bottom: 5px;
+      }
+    }
+  }
+  
+  #zona5 h2 {
+    font-size: $font-size-h3;
+  }
+}
+
+/* Animation keyframes */
+@keyframes pulse {
+  0% {
+    opacity: 0.6;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0.6;
+  }
+} 

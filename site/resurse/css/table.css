@@ -27,11 +27,13 @@ table caption {
     font-weight: bold;
     color: var(--culoare-principala);
     padding: 0 10px;
+    caption-side: bottom;
 }
 
 table thead {
     background-color: var(--culoare-principala);
     color: var(--culoare-highlight);
+    border-bottom: 4px solid var(--culoare-accent);
 }
 
 table th,
@@ -60,15 +62,23 @@ table tbody tr:hover {
     background-color: var(--culoare-accent);
     transform: scale(1.02);
     box-shadow: 0 4px 8px rgb(0, 0, 0);
+    transition: transform 0.5s ease, background-color 0.5s ease;
 }
 
 table tfoot {
     background-color: var(--culoare-principala);
     color: var(--culoare-highlight);
     font-weight: bold;
+    border-top: 4px solid var(--culoare-accent);
 }
 
 @media (max-width: 1200px) {
+    table {
+    overflow: scroll;
+    display: block;
+    }
+}
+@media (max-width: 768px) {
     table {
     overflow: scroll;
     display: block;

@@ -1,0 +1,22 @@
+/* Stiluri pentru efectul de reflexie text */
+#zona1 h2 {
+  position: relative;
+  margin-bottom: 35px;
+}
+#zona1 h2::after {
+  content: attr(data-text);
+  position: absolute;
+  left: 0;
+  bottom: -10px;
+  transform: scaleY(-1);
+  transform-origin: top;
+  opacity: 0.5;
+  filter: blur(2px);
+  color: rgba(45, 37, 71, 0.5);
+  transition: all 0.5s ease-in-out;
+}
+#zona1 h2:hover::after {
+  bottom: -30px;
+  filter: blur(3px);
+  opacity: 0.4;
+}

@@ -4,8 +4,17 @@ const fs = require('fs');
 const app = express();
 const port = 8080; 
 const sharp = require('sharp'); // Add Sharp for image processing
+const sass = require('sass'); // Add sass for SCSS compilation
 
-const vect_foldere = ["temp"];
+// Global object with paths for SCSS and CSS folders
+const obGlobal = {
+  obErori: null,
+  obImagini: null,
+  folderScss: path.join(__dirname, 'resurse/sass'),
+  folderCss: path.join(__dirname, 'resurse/css')
+};
+
+const vect_foldere = ["temp", "backup"];
 
 vect_foldere.forEach(folder => {
   let folderPath = path.join(__dirname, folder);
@@ -15,15 +24,22 @@ vect_foldere.forEach(folder => {
   } else {
     console.log(`Folderul există deja: ${folderPath}`);
   }
+  
+  // Create the backup/resurse/css folder structure if the current folder is backup
+  if (folder === "backup") {
+    const cssBackupPath = path.join(folderPath, "resurse", "css");
+    if (!fs.existsSync(path.join(folderPath, "resurse"))) {
+      fs.mkdirSync(path.join(folderPath, "resurse"));
+    }
+    if (!fs.existsSync(cssBackupPath)) {
+      fs.mkdirSync(cssBackupPath);
+      console.log(`Folder creat: ${cssBackupPath}`);
+    }
+  }
 });
 
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views'));
-
-const obGlobal = {
-  obErori: null,
-  obImagini: null
-};
 
 function initErori() {
   fs.readFile(path.join(__dirname, 'erori.json'), 'utf8', (err, data) => {
@@ -101,6 +117,94 @@ function processImagini() {
   });
 }
 
+// Function to compile SCSS to CSS
+function compileazaScss(caleScss, caleCss) {
+  try {
+    // Resolve paths (absolute or relative)
+    const inputPath = path.isAbsolute(caleScss) ? caleScss : path.join(obGlobal.folderScss, caleScss);
+    let outputPath;
+    
+    if (!caleCss) {
+      // If no CSS path specified, use the same name as the SCSS file but with .css extension
+      const scssFileName = path.basename(caleScss, '.scss');
+      outputPath = path.join(obGlobal.folderCss, `${scssFileName}.css`);
+    } else {
+      outputPath = path.isAbsolute(caleCss) ? caleCss : path.join(obGlobal.folderCss, caleCss);
+    }
+    
+    // Create backup if the CSS file already exists
+    if (fs.existsSync(outputPath)) {
+      // Define backup path with timestamp
+      const backupFolder = path.join(__dirname, "backup", "resurse", "css");
+      const timestamp = Date.now();
+      const fileName = path.basename(outputPath, '.css');
+      const backupFileName = `${fileName}_${timestamp}.css`;
+      const backupFilePath = path.join(backupFolder, backupFileName);
+      
+      try {
+        // Copy existing CSS file to backup
+        fs.copyFileSync(outputPath, backupFilePath);
+        console.log(`Backup creat pentru: ${backupFilePath}`);
+      } catch (err) {
+        console.error(`Eroare la crearea backup-ului pentru ${outputPath}:`, err);
+      }
+    }
+    
+    // Compile SCSS to CSS
+    const result = sass.compile(inputPath, {
+      outputStyle: "expanded"
+    });
+    
+    // Ensure the output directory exists
+    const outputDir = path.dirname(outputPath);
+    if (!fs.existsSync(outputDir)) {
+      fs.mkdirSync(outputDir, { recursive: true });
+    }
+    
+    // Write the compiled CSS to the output file
+    fs.writeFileSync(outputPath, result.css);
+    console.log(`Compilat: ${inputPath} -> ${outputPath}`);
+  } catch (err) {
+    console.error(`Eroare la compilarea SCSS ${caleScss}:`, err);
+  }
+}
+
+// Watch for SCSS file changes
+function watchScssFiles() {
+  if (!fs.existsSync(obGlobal.folderScss)) {
+    console.error(`Folderul ${obGlobal.folderScss} nu există pentru monitorizare.`);
+    return;
+  }
+  
+  console.log(`Monitorizare folder SCSS: ${obGlobal.folderScss}`);
+  
+  fs.watch(obGlobal.folderScss, (eventType, filename) => {
+    if (filename && filename.endsWith('.scss')) {
+      console.log(`Fișier SCSS modificat: ${filename}, eveniment: ${eventType}`);
+      
+      // Small delay to ensure the file write is complete
+      setTimeout(() => {
+        compileazaScss(filename);
+      }, 100);
+    }
+  });
+}
+
+// Initial compilation of all SCSS files
+function initCompileSass() {
+  if (fs.existsSync(obGlobal.folderScss)) {
+    const files = fs.readdirSync(obGlobal.folderScss);
+    files.forEach(file => {
+      if (file.endsWith('.scss')) {
+        compileazaScss(file);
+      }
+    });
+    console.log("Toate fisierele SCSS au fost compilate.");
+  } else {
+    console.error(`Folderul ${obGlobal.folderScss} nu există.`);
+  }
+}
+
 function afisareEroare(res, identificator, titlu, text, imagine) {
   if (!obGlobal.obErori) {
     console.error('Error data not loaded yet.');
@@ -132,6 +236,8 @@ function afisareEroare(res, identificator, titlu, text, imagine) {
 
 initErori();
 initImagini();
+initCompileSass();
+watchScssFiles(); // Start watching SCSS files for changes
 
 app.use((req, res, next) => {
   res.locals.ip = req.ip || req.connection.remoteAddress;
@@ -181,6 +287,10 @@ app.get('/galerie-statica', (req, res) => {
   res.render('pagini/galerie-statica', {
     imagini: obGlobal.obImagini.imagini
   });
+});
+
+app.get('/bootstrap', (req, res) => {
+  res.render('pagini/bootstrap');
 });
 
 app.get('/:page', (req, res) => {

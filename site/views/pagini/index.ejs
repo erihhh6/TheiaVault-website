@@ -3,6 +3,24 @@
 <head>
     <title>TheiaVault</title>
     <%- include('../fragmente/head') %>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Inițializează atributul data-text pentru efectul de reflexie
+            const h2Reflexie = document.querySelector('#zona1 h2');
+            if (h2Reflexie) {
+                // Asigură-te că textul original este stocat în data-text
+                const textOriginal = h2Reflexie.textContent.trim();
+                h2Reflexie.setAttribute('data-text', textOriginal);
+                
+                // Forțează un reflow pentru a actualiza efectul CSS
+                h2Reflexie.style.display = 'inline-block';
+                setTimeout(() => {
+                    h2Reflexie.style.display = '';
+                    h2Reflexie.style.display = 'inline-block';
+                }, 50);
+            }
+        });
+    </script>
 </head>
 <body>
     <div id="banner-print-container">
