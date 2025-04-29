@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <title>Galerie Dinamică - TheiaVault</title>
+    <%- include('../fragmente/head') %>
+</head>
+<body>
+    <div id="banner-print-container">
+        <p class="banner-print">Acesta este un proiect școlar!</p>
+    </div>
+    <div class="grid-container">
+        <%- include('../fragmente/header') %>
+        <main>
+            <section id="galerie-animata-section">
+                <h2>Galerie Animată</h2>
+                <p class="descriere-galerie">
+                    Bine ați venit la galeria animată! Aici puteți vedea o selecție aleatorie de bijuterii din colecția noastră 
+                    într-o prezentare dinamică. La fiecare încărcare a paginii, numărul imaginilor afișate variază aleatoriu 
+                    (9, 12 sau 15 imagini). Galeria este vizibilă doar pe ecranele mari (peste 1200px lățime).
+                </p>
+                <p class="descriere-galerie">
+                    Animația constă dintr-o rotație completă (360°) a imaginii curente, urmată de o translație care duce la 
+                    următoarea imagine. Dacă aduceți cursorul peste galerie, animația se va opri temporar, permițându-vă 
+                    să admirați detaliile fiecărei bijuterii.
+                </p>
+                
+                <div class="galerie-animata-container">
+                    <div class="galerie-animata img-<%= locals.numar_imagini %>">
+                        <% if(locals.imagini && locals.imagini.length > 0) { %>
+                            <% for(let imag of locals.imagini) { %>
+                                <img src="<%= imag.cale_imagine %>" alt="<%= imag.titlu %>" title="<%= imag.descriere %>">
+                            <% } %>
+                        <% } %>
+                    </div>
+                </div>
+                <p class="info-galerie-animata">Galeria afișează <%= locals.numar_imagini %> imagini și este vizibilă doar pe ecranele mari.</p>
+            </section>
+        </main>
+
+        <%- include('../fragmente/footer') %>
+    </div>
+</body>
+</html> 

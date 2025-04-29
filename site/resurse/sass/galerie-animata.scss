@@ -1,0 +1,268 @@
+// Variabile pentru galeria animată
+$culoare-principala: #2E3194;
+$culoare-secundara: #544BB8;
+$culoare-accent: #C17DA7;
+$culoare-highlight: #E3BACB;
+$culoare-border: #544BB8;
+
+$border-width: 20px;
+$border-radius: 10px;
+$border-spacing: 20px;
+$duration-rotation: 2s;
+$duration-translation: 1.5s;
+$animation-pause: 1s;
+$total-animation-time: $duration-rotation + $duration-translation + $animation-pause;
+
+// Mixins pentru responsivitate
+@mixin for-large-screen {
+  @media (min-width: 1201px) {
+    @content;
+  }
+}
+
+// Mixin pentru calcule variabile de grid
+@mixin grid-config($rows, $cols) {
+  --rows: #{$rows};
+  --cols: #{$cols};
+  
+  // Calcularea dimensiunilor grid-ului
+  grid-template-rows: repeat(var(--rows), 1fr);
+  grid-template-columns: repeat(var(--cols), 1fr);
+}
+
+// Stiluri de bază pentru galeria animată
+.galerie-animata-container {
+  display: none; // Implicit ascunsă
+  
+  @include for-large-screen {
+    display: block;
+    position: relative;
+    width: 350px;
+    height: 350px;
+    margin: 40px auto;
+    perspective: 1000px;
+    overflow: hidden;
+    
+    // Border decorativ
+    border: $border-width solid $culoare-principala;
+    border-image: linear-gradient(
+      45deg, 
+      $culoare-principala, 
+      $culoare-secundara, 
+      $culoare-accent, 
+      $culoare-highlight, 
+      $culoare-principala
+    ) 30 stretch;
+    border-radius: $border-radius;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    
+    // Setări hover pentru animație
+    &:hover .galerie-animata {
+      animation-play-state: paused;
+    }
+  }
+}
+
+.galerie-animata {
+  display: grid;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  position: relative;
+  
+  // Imagini în grid
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    grid-row: 1;
+    grid-column: 1;
+    opacity: 0;
+    backface-visibility: hidden;
+    position: absolute;
+    top: 0;
+    left: 0;
+    
+    // Stilizare imagini
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  &.img-9 {
+    @include grid-config(3, 3);
+    
+    @for $i from 1 through 9 {
+      img:nth-child(#{$i}) {
+        animation: fadeIn 0.5s ease forwards,
+                  fadeOut 0.5s ease forwards;
+        animation-delay: #{($i - 1) * $total-animation-time}, 
+                        #{($i - 1) * $total-animation-time + $duration-rotation + $duration-translation};
+      }
+    }
+    
+    animation: rotate-9 #{9 * $total-animation-time} infinite;
+  }
+  
+  &.img-12 {
+    @include grid-config(4, 3);
+    
+    @for $i from 1 through 12 {
+      img:nth-child(#{$i}) {
+        animation: fadeIn 0.5s ease forwards,
+                  fadeOut 0.5s ease forwards;
+        animation-delay: #{($i - 1) * $total-animation-time}, 
+                        #{($i - 1) * $total-animation-time + $duration-rotation + $duration-translation};
+      }
+    }
+    
+    animation: rotate-12 #{12 * $total-animation-time} infinite;
+  }
+  
+  &.img-15 {
+    @include grid-config(5, 3);
+    
+    @for $i from 1 through 15 {
+      img:nth-child(#{$i}) {
+        animation: fadeIn 0.5s ease forwards,
+                  fadeOut 0.5s ease forwards;
+        animation-delay: #{($i - 1) * $total-animation-time}, 
+                        #{($i - 1) * $total-animation-time + $duration-rotation + $duration-translation};
+      }
+    }
+    
+    animation: rotate-15 #{15 * $total-animation-time} infinite;
+  }
+}
+
+// Keyframes pentru fade in/out
+@keyframes fadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+@keyframes fadeOut {
+  0% { opacity: 1; }
+  100% { opacity: 0; }
+}
+
+// Keyframes pentru rotație și translație - 9 imagini
+@keyframes rotate-9 {
+  @for $i from 0 through 8 {
+    $start: $i * (100% / 9);
+    $mid1: $start + (100% / 9) * 0.3;
+    $mid2: $start + (100% / 9) * 0.7;
+    $end: $start + (100% / 9);
+    
+    #{$start} {
+      transform: rotate(0deg);
+    }
+    
+    #{$mid1} {
+      transform: rotate(360deg);
+    }
+    
+    #{$mid2} {
+      @if $i == 0 {
+        transform: translateX(calc(100% / 3)) rotate(360deg);
+      } @else if $i == 1 {
+        transform: translateX(calc(100% / 3)) rotate(360deg);
+      } @else if $i == 2 {
+        transform: translateY(calc(100% / 3)) rotate(360deg);
+      } @else if $i == 3 {
+        transform: translateY(calc(100% / 3)) rotate(360deg);
+      } @else if $i == 4 {
+        transform: translateX(calc(-100% / 3)) rotate(360deg);
+      } @else if $i == 5 {
+        transform: translateX(calc(-100% / 3)) rotate(360deg);
+      } @else if $i == 6 {
+        transform: translateY(calc(-100% / 3)) rotate(360deg);
+      } @else if $i == 7 {
+        transform: translateY(calc(-100% / 3)) rotate(360deg);
+      } @else {
+        transform: translateX(calc(100% / 3)) rotate(360deg);
+      }
+    }
+    
+    #{$end - 0.1%} {
+      transform: rotate(0deg);
+    }
+  }
+}
+
+// Keyframes pentru rotație și translație - 12 imagini
+@keyframes rotate-12 {
+  @for $i from 0 through 11 {
+    $start: $i * (100% / 12);
+    $mid1: $start + (100% / 12) * 0.3;
+    $mid2: $start + (100% / 12) * 0.7;
+    $end: $start + (100% / 12);
+    
+    #{$start} {
+      transform: rotate(0deg);
+    }
+    
+    #{$mid1} {
+      transform: rotate(360deg);
+    }
+    
+    #{$mid2} {
+      @if $i % 3 == 0 {
+        transform: translateX(calc(100% / 3)) rotate(360deg);
+      } @else if $i % 3 == 1 {
+        transform: translateX(calc(100% / 3)) rotate(360deg);
+      } @else if $i % 3 == 2 {
+        transform: translateY(calc(100% / 4)) rotate(360deg);
+      }
+    }
+    
+    #{$end - 0.1%} {
+      transform: rotate(0deg);
+    }
+  }
+}
+
+// Keyframes pentru rotație și translație - 15 imagini
+@keyframes rotate-15 {
+  @for $i from 0 through 14 {
+    $start: $i * (100% / 15);
+    $mid1: $start + (100% / 15) * 0.3;
+    $mid2: $start + (100% / 15) * 0.7;
+    $end: $start + (100% / 15);
+    
+    #{$start} {
+      transform: rotate(0deg);
+    }
+    
+    #{$mid1} {
+      transform: rotate(360deg);
+    }
+    
+    #{$mid2} {
+      @if $i % 3 == 0 {
+        transform: translateX(calc(100% / 3)) rotate(360deg);
+      } @else if $i % 3 == 1 {
+        transform: translateX(calc(100% / 3)) rotate(360deg);
+      } @else if $i % 3 == 2 {
+        transform: translateY(calc(100% / 5)) rotate(360deg);
+      }
+    }
+    
+    #{$end - 0.1%} {
+      transform: rotate(0deg);
+    }
+  }
+}
+
+// Stiluri pentru texte descriptive în pagina galeriei animate
+.descriere-galerie {
+  margin-bottom: 20px;
+  line-height: 1.6;
+  color: var(--culoare-text);
+}
+
+.info-galerie-animata {
+  margin-top: 20px;
+  font-style: italic;
+  color: var(--culoare-secundara);
+  text-align: center;
+} 

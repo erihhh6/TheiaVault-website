@@ -270,9 +270,74 @@ app.use((req, res, next) => {
 
 app.use(express.static(path.join(__dirname, 'resurse')));
 
-app.get(['/', '/index', '/home'], (req, res) => {
-  res.render('pagini/index');
+app.get(['/', '/index', '/home'], function(req, res) {
+    res.render('pagini/index', {
+        ip: req.ip
+    });
 });
+
+app.get('/galerie-dinamica', function(req, res) {
+    // Citește galeria din JSON
+    let rawdata = fs.readFileSync(path.join(__dirname, "resurse", "json", "galerie.json"));
+    let galerie = JSON.parse(rawdata);
+    
+    // Extrage imaginile pentru galeria animată
+    let galerieAnimata = galerie.imagini.filter(img => img['galerie-animata'] === true);
+    
+    // Amestecă întregul array de imagini pentru a obține un rezultat aleatoriu
+    galerieAnimata = shuffleArray(galerieAnimata);
+    
+    // Identifică imaginile unice (după amestecare)
+    let imaginiDistincte = [];
+    let imaginiUtilizate = new Set();
+    
+    // Determină câte imagini unice avem disponibile
+    for (const img of galerieAnimata) {
+        if (!imaginiUtilizate.has(img.cale_imagine)) {
+            imaginiUtilizate.add(img.cale_imagine);
+            imaginiDistincte.push(img);
+        }
+    }
+    
+    let numarImaginiUnice = imaginiDistincte.length;
+    
+    // Alege un număr aleatoriu dintre 9, 12, 15, dar nu mai mare decât numărul de imagini unice disponibile
+    let optiuniNumar = [9, 12, 15].filter(n => n <= numarImaginiUnice);
+    let numarAleatoriu = optiuniNumar.length > 0 ? 
+                         optiuniNumar[Math.floor(Math.random() * optiuniNumar.length)] : 
+                         numarImaginiUnice;
+    
+    // Limitează imaginile la numărul aleatoriu
+    imaginiDistincte = imaginiDistincte.slice(0, numarAleatoriu);
+    
+    // Generăm CSS-ul din SASS pentru numărul curent de imagini
+    const sass = require('sass');
+    const sassResult = sass.compile(path.join(__dirname, 'resurse/sass/galerie-animata.scss'));
+    fs.writeFileSync(path.join(__dirname, 'resurse/css/galerie-animata.css'), sassResult.css);
+    
+    res.render('pagini/galerie-dinamica', {
+        ip: req.ip,
+        imagini: imaginiDistincte, 
+        numar_imagini: imaginiDistincte.length
+    });
+});
+
+// Funcție pentru a amesteca un array (algoritmul Fisher-Yates)
+function shuffleArray(array) {
+    let currentIndex = array.length, randomIndex;
+    
+    // Cât timp mai sunt elemente de amestecat
+    while (currentIndex != 0) {
+        // Alege un element rămas
+        randomIndex = Math.floor(Math.random() * currentIndex);
+        currentIndex--;
+        
+        // Schimbă cu elementul curent
+        [array[currentIndex], array[randomIndex]] = [array[randomIndex], array[currentIndex]];
+    }
+    
+    return array;
+}
 
 app.get('/favicon.ico', (req, res) => {
   res.sendFile(path.join(__dirname, "resurse", "icon", "favicon.ico"));

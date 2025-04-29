@@ -2,292 +2,284 @@
   "cale_galerie": "/imagini/galerie",
   "imagini": [
     {
-      "cale_imagine": "/resurse/imagini/bijuterii/colier_perle.jpg",
-      "titlu": "Colier cu perle",
-      "descriere": "Colier elegant din aur cu perle naturale",
-      "sfert_ora": 1
+      "cale_imagine": "/imagini/bijuterii/bratara_argint1.jpg",
+      "titlu": "Brățară din argint 1",
+      "descriere": "Brățară elegantă din argint model 1",
+      "sfert_ora": 1,
+      "galerie-animata": true
     },
     {
-      "cale_imagine": "/resurse/imagini/bijuterii/inel_diamant.jpg",
-      "titlu": "Inel cu diamant",
-      "descriere": "Inel din aur alb cu diamant central",
-      "sfert_ora": 1
+      "cale_imagine": "/imagini/bijuterii/bratara_argint2.jpg",
+      "titlu": "Brățară din argint 2",
+      "descriere": "Brățară elegantă din argint model 2",
+      "sfert_ora": 1,
+      "galerie-animata": true
     },
     {
-      "cale_imagine": "/resurse/imagini/bijuterii/colier_perle.jpg",
-      "titlu": "Colier din argint",
-      "descriere": "Colier fin din argint sterling",
-      "sfert_ora": 1
+      "cale_imagine": "/imagini/bijuterii/bratara_argint3.jpg",
+      "titlu": "Brățară din argint 3",
+      "descriere": "Brățară elegantă din argint model 3",
+      "sfert_ora": 1,
+      "galerie-animata": true
     },
     {
-      "cale_imagine": "/resurse/imagini/bijuterii/colier_perle.jpg",
-      "titlu": "Colier cu perle",
-      "descriere": "Colier elegant din aur cu perle naturale",
-      "sfert_ora": 1
+      "cale_imagine": "/imagini/bijuterii/bratara_argint4.jpg",
+      "titlu": "Brățară din argint 4",
+      "descriere": "Brățară elegantă din argint model 4",
+      "sfert_ora": 1,
+      "galerie-animata": true
     },
     {
-      "cale_imagine": "/resurse/imagini/bijuterii/inel_diamant.jpg",
-      "titlu": "Inel cu diamant",
-      "descriere": "Inel din aur alb cu diamant central",
-      "sfert_ora": 1
+      "cale_imagine": "/imagini/bijuterii/bratara_argint5.jpg",
+      "titlu": "Brățară din argint 5",
+      "descriere": "Brățară elegantă din argint model 5",
+      "sfert_ora": 1,
+      "galerie-animata": true
     },
     {
-      "cale_imagine": "/resurse/imagini/bijuterii/colier_perle.jpg",
-      "titlu": "Colier din argint",
-      "descriere": "Colier fin din argint sterling",
-      "sfert_ora": 1
+      "cale_imagine": "/imagini/bijuterii/bratara_argint6.jpg",
+      "titlu": "Brățară din argint 6",
+      "descriere": "Brățară elegantă din argint model 6",
+      "sfert_ora": 2,
+      "galerie-animata": true
     },
     {
-      "cale_imagine": "/resurse/imagini/bijuterii/colier_perle.jpg",
-      "titlu": "Colier cu perle",
-      "descriere": "Colier elegant din aur cu perle naturale",
-      "sfert_ora": 1
+      "cale_imagine": "/imagini/bijuterii/bratara_argint7.jpg",
+      "titlu": "Brățară din argint 7",
+      "descriere": "Brățară elegantă din argint model 7",
+      "sfert_ora": 2,
+      "galerie-animata": true
     },
     {
-      "cale_imagine": "/resurse/imagini/bijuterii/inel_diamant.jpg",
-      "titlu": "Inel cu diamant",
-      "descriere": "Inel din aur alb cu diamant central",
-      "sfert_ora": 1
+      "cale_imagine": "/imagini/bijuterii/bratara_argint8.jpg",
+      "titlu": "Brățară din argint 8",
+      "descriere": "Brățară elegantă din argint model 8",
+      "sfert_ora": 2,
+      "galerie-animata": true
     },
     {
-      "cale_imagine": "/resurse/imagini/bijuterii/colier_perle.jpg",
-      "titlu": "Colier din argint",
-      "descriere": "Colier fin din argint sterling",
-      "sfert_ora": 1
+      "cale_imagine": "/imagini/bijuterii/bratara_argint9.jpg",
+      "titlu": "Brățară din argint 9",
+      "descriere": "Brățară elegantă din argint model 9",
+      "sfert_ora": 2,
+      "galerie-animata": true
     },
     {
-      "cale_imagine": "/resurse/imagini/bijuterii/colier_perle.jpg",
-      "titlu": "Colier cu perle",
-      "descriere": "Colier elegant din aur cu perle naturale",
-      "sfert_ora": 1
+      "cale_imagine": "/imagini/bijuterii/bratara_argint10.jpg",
+      "titlu": "Brățară din argint 10",
+      "descriere": "Brățară elegantă din argint model 10",
+      "sfert_ora": 2,
+      "galerie-animata": true
     },
     {
-      "cale_imagine": "/resurse/imagini/bijuterii/inel_diamant.jpg",
-      "titlu": "Inel cu diamant",
-      "descriere": "Inel din aur alb cu diamant central",
-      "sfert_ora": 1
+      "cale_imagine": "/imagini/bijuterii/colier_perle1.jpg",
+      "titlu": "Colier cu perle 1",
+      "descriere": "Colier elegant cu perle model 1",
+      "sfert_ora": 1,
+      "galerie-animata": true
     },
     {
-      "cale_imagine": "/resurse/imagini/bijuterii/colier_perle.jpg",
-      "titlu": "Colier din argint",
-      "descriere": "Colier fin din argint sterling",
-      "sfert_ora": 1
+      "cale_imagine": "/imagini/bijuterii/colier_perle2.jpg",
+      "titlu": "Colier cu perle 2",
+      "descriere": "Colier elegant cu perle model 2",
+      "sfert_ora": 1,
+      "galerie-animata": true
     },
     {
-      "cale_imagine": "/resurse/imagini/bijuterii/bratara_argint.jpg",
-      "titlu": "Brățară din argint",
-      "descriere": "Brățară elegantă din argint gravată manual",
-      "sfert_ora": 2
+      "cale_imagine": "/imagini/bijuterii/colier_perle3.jpg",
+      "titlu": "Colier cu perle 3",
+      "descriere": "Colier elegant cu perle model 3",
+      "sfert_ora": 1,
+      "galerie-animata": true
     },
     {
-      "cale_imagine": "/resurse/imagini/bijuterii/inel_diamant.jpg",
-      "titlu": "Pandantiv cu onix",
-      "descriere": "Pandantiv din argint cu onix negru",
-      "sfert_ora": 2
+      "cale_imagine": "/imagini/bijuterii/colier_perle4.jpg",
+      "titlu": "Colier cu perle 4",
+      "descriere": "Colier elegant cu perle model 4",
+      "sfert_ora": 1,
+      "galerie-animata": true
     },
     {
-      "cale_imagine": "/resurse/imagini/bijuterii/cercei_aur.jpg",
-      "titlu": "Cercei din aur",
-      "descriere": "Cercei din aur de 18k cu motive florale",
-      "sfert_ora": 2
+      "cale_imagine": "/imagini/bijuterii/colier_perle5.jpg",
+      "titlu": "Colier cu perle 5",
+      "descriere": "Colier elegant cu perle model 5",
+      "sfert_ora": 1,
+      "galerie-animata": true
     },
     {
-      "cale_imagine": "/resurse/imagini/bijuterii/bratara_argint.jpg",
-      "titlu": "Brățară din argint",
-      "descriere": "Brățară elegantă din argint gravată manual",
-      "sfert_ora": 2
+      "cale_imagine": "/imagini/bijuterii/colier_perle6.jpg",
+      "titlu": "Colier cu perle 6",
+      "descriere": "Colier elegant cu perle model 6",
+      "sfert_ora": 2,
+      "galerie-animata": true
     },
     {
-      "cale_imagine": "/resurse/imagini/bijuterii/inel_diamant.jpg",
-      "titlu": "Pandantiv cu onix",
-      "descriere": "Pandantiv din argint cu onix negru",
-      "sfert_ora": 2
+      "cale_imagine": "/imagini/bijuterii/colier_perle7.jpg",
+      "titlu": "Colier cu perle 7",
+      "descriere": "Colier elegant cu perle model 7",
+      "sfert_ora": 2,
+      "galerie-animata": true
     },
     {
-      "cale_imagine": "/resurse/imagini/bijuterii/cercei_aur.jpg",
-      "titlu": "Cercei din aur",
-      "descriere": "Cercei din aur de 18k cu motive florale",
-      "sfert_ora": 2
+      "cale_imagine": "/imagini/bijuterii/colier_perle8.jpg",
+      "titlu": "Colier cu perle 8",
+      "descriere": "Colier elegant cu perle model 8",
+      "sfert_ora": 2,
+      "galerie-animata": true
     },
     {
-      "cale_imagine": "/resurse/imagini/bijuterii/bratara_argint.jpg",
-      "titlu": "Brățară din argint",
-      "descriere": "Brățară elegantă din argint gravată manual",
-      "sfert_ora": 2
+      "cale_imagine": "/imagini/bijuterii/colier_perle9.jpg",
+      "titlu": "Colier cu perle 9",
+      "descriere": "Colier elegant cu perle model 9",
+      "sfert_ora": 2,
+      "galerie-animata": true
     },
     {
-      "cale_imagine": "/resurse/imagini/bijuterii/inel_diamant.jpg",
-      "titlu": "Pandantiv cu onix",
-      "descriere": "Pandantiv din argint cu onix negru",
-      "sfert_ora": 2
+      "cale_imagine": "/imagini/bijuterii/colier_perle10.jpg",
+      "titlu": "Colier cu perle 10",
+      "descriere": "Colier elegant cu perle model 10",
+      "sfert_ora": 2,
+      "galerie-animata": true
     },
     {
-      "cale_imagine": "/resurse/imagini/bijuterii/cercei_aur.jpg",
-      "titlu": "Cercei din aur",
-      "descriere": "Cercei din aur de 18k cu motive florale",
-      "sfert_ora": 2
+      "cale_imagine": "/imagini/bijuterii/cercei_aur1.jpg",
+      "titlu": "Cercei din aur 1",
+      "descriere": "Cercei din aur de 18k model 1",
+      "sfert_ora": 3,
+      "galerie-animata": true
     },
     {
-      "cale_imagine": "/resurse/imagini/bijuterii/bratara_argint.jpg",
-      "titlu": "Brățară din argint",
-      "descriere": "Brățară elegantă din argint gravată manual",
-      "sfert_ora": 2
+      "cale_imagine": "/imagini/bijuterii/cercei_aur2.jpg",
+      "titlu": "Cercei din aur 2",
+      "descriere": "Cercei din aur de 18k model 2",
+      "sfert_ora": 3,
+      "galerie-animata": true
     },
     {
-      "cale_imagine": "/resurse/imagini/bijuterii/inel_diamant.jpg",
-      "titlu": "Pandantiv cu onix",
-      "descriere": "Pandantiv din argint cu onix negru",
-      "sfert_ora": 2
+      "cale_imagine": "/imagini/bijuterii/cercei_aur3.jpg",
+      "titlu": "Cercei din aur 3",
+      "descriere": "Cercei din aur de 18k model 3",
+      "sfert_ora": 3,
+      "galerie-animata": true
     },
     {
-      "cale_imagine": "/resurse/imagini/bijuterii/cercei_aur.jpg",
-      "titlu": "Cercei din aur",
-      "descriere": "Cercei din aur de 18k cu motive florale",
-      "sfert_ora": 2
+      "cale_imagine": "/imagini/bijuterii/cercei_aur4.jpg",
+      "titlu": "Cercei din aur 4",
+      "descriere": "Cercei din aur de 18k model 4",
+      "sfert_ora": 3,
+      "galerie-animata": true
     },
     {
-      "cale_imagine": "/resurse/imagini/bijuterii/colier_perle.jpg",
-      "titlu": "Pandantiv cu safir",
-      "descriere": "Pandantiv din aur cu safir albastru",
-      "sfert_ora": 3
+      "cale_imagine": "/imagini/bijuterii/cercei_aur5.jpg",
+      "titlu": "Cercei din aur 5",
+      "descriere": "Cercei din aur de 18k model 5",
+      "sfert_ora": 3,
+      "galerie-animata": true
     },
     {
-      "cale_imagine": "/resurse/imagini/bijuterii/inel_diamant.jpg",
-      "titlu": "Inel cu smarald",
-      "descriere": "Inel din platină cu smarald central",
-      "sfert_ora": 3
+      "cale_imagine": "/imagini/bijuterii/cercei_aur6.jpg",
+      "titlu": "Cercei din aur 6",
+      "descriere": "Cercei din aur de 18k model 6",
+      "sfert_ora": 4,
+      "galerie-animata": true
     },
     {
-      "cale_imagine": "/resurse/imagini/bijuterii/bratara_argint.jpg",
-      "titlu": "Inel cu perlă",
-      "descriere": "Inel delicat din aur cu perlă centrală",
-      "sfert_ora": 3
+      "cale_imagine": "/imagini/bijuterii/cercei_aur7.jpg",
+      "titlu": "Cercei din aur 7",
+      "descriere": "Cercei din aur de 18k model 7",
+      "sfert_ora": 4,
+      "galerie-animata": true
     },
     {
-      "cale_imagine": "/resurse/imagini/bijuterii/colier_perle.jpg",
-      "titlu": "Pandantiv cu safir",
-      "descriere": "Pandantiv din aur cu safir albastru",
-      "sfert_ora": 3
+      "cale_imagine": "/imagini/bijuterii/cercei_aur8.jpg",
+      "titlu": "Cercei din aur 8",
+      "descriere": "Cercei din aur de 18k model 8",
+      "sfert_ora": 4,
+      "galerie-animata": true
     },
     {
-      "cale_imagine": "/resurse/imagini/bijuterii/inel_diamant.jpg",
-      "titlu": "Inel cu smarald",
-      "descriere": "Inel din platină cu smarald central",
-      "sfert_ora": 3
+      "cale_imagine": "/imagini/bijuterii/cercei_aur9.jpg",
+      "titlu": "Cercei din aur 9",
+      "descriere": "Cercei din aur de 18k model 9",
+      "sfert_ora": 4,
+      "galerie-animata": true
     },
     {
-      "cale_imagine": "/resurse/imagini/bijuterii/bratara_argint.jpg",
-      "titlu": "Inel cu perlă",
-      "descriere": "Inel delicat din aur cu perlă centrală",
-      "sfert_ora": 3
+      "cale_imagine": "/imagini/bijuterii/cercei_aur10.jpg",
+      "titlu": "Cercei din aur 10",
+      "descriere": "Cercei din aur de 18k model 10",
+      "sfert_ora": 4,
+      "galerie-animata": true
     },
     {
-      "cale_imagine": "/resurse/imagini/bijuterii/colier_perle.jpg",
-      "titlu": "Pandantiv cu safir",
-      "descriere": "Pandantiv din aur cu safir albastru",
-      "sfert_ora": 3
+      "cale_imagine": "/imagini/bijuterii/inel_diamant1.jpg",
+      "titlu": "Inel cu diamant 1",
+      "descriere": "Inel din aur alb cu diamant model 1",
+      "sfert_ora": 3,
+      "galerie-animata": true
     },
     {
-      "cale_imagine": "/resurse/imagini/bijuterii/inel_diamant.jpg",
-      "titlu": "Inel cu smarald",
-      "descriere": "Inel din platină cu smarald central",
-      "sfert_ora": 3
+      "cale_imagine": "/imagini/bijuterii/inel_diamant2.jpg",
+      "titlu": "Inel cu diamant 2",
+      "descriere": "Inel din aur alb cu diamant model 2",
+      "sfert_ora": 3,
+      "galerie-animata": true
     },
     {
-      "cale_imagine": "/resurse/imagini/bijuterii/bratara_argint.jpg",
-      "titlu": "Inel cu perlă",
-      "descriere": "Inel delicat din aur cu perlă centrală",
-      "sfert_ora": 3
+      "cale_imagine": "/imagini/bijuterii/inel_diamant3.jpg",
+      "titlu": "Inel cu diamant 3",
+      "descriere": "Inel din aur alb cu diamant model 3",
+      "sfert_ora": 3,
+      "galerie-animata": true
     },
     {
-      "cale_imagine": "/resurse/imagini/bijuterii/colier_perle.jpg",
-      "titlu": "Pandantiv cu safir",
-      "descriere": "Pandantiv din aur cu safir albastru",
-      "sfert_ora": 3
+      "cale_imagine": "/imagini/bijuterii/inel_diamant4.jpg",
+      "titlu": "Inel cu diamant 4",
+      "descriere": "Inel din aur alb cu diamant model 4",
+      "sfert_ora": 3,
+      "galerie-animata": true
     },
     {
-      "cale_imagine": "/resurse/imagini/bijuterii/inel_diamant.jpg",
-      "titlu": "Inel cu smarald",
-      "descriere": "Inel din platină cu smarald central",
-      "sfert_ora": 3
+      "cale_imagine": "/imagini/bijuterii/inel_diamant5.jpg",
+      "titlu": "Inel cu diamant 5",
+      "descriere": "Inel din aur alb cu diamant model 5",
+      "sfert_ora": 3,
+      "galerie-animata": true
     },
     {
-      "cale_imagine": "/resurse/imagini/bijuterii/bratara_argint.jpg",
-      "titlu": "Inel cu perlă",
-      "descriere": "Inel delicat din aur cu perlă centrală",
-      "sfert_ora": 3
+      "cale_imagine": "/imagini/bijuterii/inel_diamant6.jpg",
+      "titlu": "Inel cu diamant 6",
+      "descriere": "Inel din aur alb cu diamant model 6",
+      "sfert_ora": 4,
+      "galerie-animata": true
     },
     {
-      "cale_imagine": "/resurse/imagini/bijuterii/bratara_argint.jpg",
-      "titlu": "Cercei cu perle",
-      "descriere": "Cercei din argint cu perle de cultură",
-      "sfert_ora": 4
+      "cale_imagine": "/imagini/bijuterii/inel_diamant7.jpg",
+      "titlu": "Inel cu diamant 7",
+      "descriere": "Inel din aur alb cu diamant model 7",
+      "sfert_ora": 4,
+      "galerie-animata": true
     },
     {
-      "cale_imagine": "/resurse/imagini/bijuterii/cercei_aur.jpg",
-      "titlu": "Brățară din aur",
-      "descriere": "Brățară din aur galben de 14k",
-      "sfert_ora": 4
+      "cale_imagine": "/imagini/bijuterii/inel_diamant8.jpg",
+      "titlu": "Inel cu diamant 8",
+      "descriere": "Inel din aur alb cu diamant model 8",
+      "sfert_ora": 4,
+      "galerie-animata": true
     },
     {
-      "cale_imagine": "/resurse/imagini/bijuterii/cercei_aur.jpg",
-      "titlu": "Cercei cu cristale",
-      "descriere": "Cercei eleganti cu cristale Swarovski",
-      "sfert_ora": 4
+      "cale_imagine": "/imagini/bijuterii/inel_diamant9.jpg",
+      "titlu": "Inel cu diamant 9",
+      "descriere": "Inel din aur alb cu diamant model 9",
+      "sfert_ora": 4,
+      "galerie-animata": true
     },
     {
-      "cale_imagine": "/resurse/imagini/bijuterii/bratara_argint.jpg",
-      "titlu": "Cercei cu perle",
-      "descriere": "Cercei din argint cu perle de cultură",
-      "sfert_ora": 4
-    },
-    {
-      "cale_imagine": "/resurse/imagini/bijuterii/cercei_aur.jpg",
-      "titlu": "Brățară din aur",
-      "descriere": "Brățară din aur galben de 14k",
-      "sfert_ora": 4
-    },
-    {
-      "cale_imagine": "/resurse/imagini/bijuterii/cercei_aur.jpg",
-      "titlu": "Cercei cu cristale",
-      "descriere": "Cercei eleganti cu cristale Swarovski",
-      "sfert_ora": 4
-    },
-    {
-      "cale_imagine": "/resurse/imagini/bijuterii/bratara_argint.jpg",
-      "titlu": "Cercei cu perle",
-      "descriere": "Cercei din argint cu perle de cultură",
-      "sfert_ora": 4
-    },
-    {
-      "cale_imagine": "/resurse/imagini/bijuterii/cercei_aur.jpg",
-      "titlu": "Brățară din aur",
-      "descriere": "Brățară din aur galben de 14k",
-      "sfert_ora": 4
-    },
-    {
-      "cale_imagine": "/resurse/imagini/bijuterii/cercei_aur.jpg",
-      "titlu": "Cercei cu cristale",
-      "descriere": "Cercei eleganti cu cristale Swarovski",
-      "sfert_ora": 4
-    },
-    {
-      "cale_imagine": "/resurse/imagini/bijuterii/bratara_argint.jpg",
-      "titlu": "Cercei cu perle",
-      "descriere": "Cercei din argint cu perle de cultură",
-      "sfert_ora": 4
-    },
-    {
-      "cale_imagine": "/resurse/imagini/bijuterii/cercei_aur.jpg",
-      "titlu": "Brățară din aur",
-      "descriere": "Brățară din aur galben de 14k",
-      "sfert_ora": 4
-    },
-    {
-      "cale_imagine": "/resurse/imagini/bijuterii/cercei_aur.jpg",
-      "titlu": "Cercei cu cristale",
-      "descriere": "Cercei eleganti cu cristale Swarovski",
-      "sfert_ora": 4
+      "cale_imagine": "/imagini/bijuterii/inel_diamant10.jpg",
+      "titlu": "Inel cu diamant 10",
+      "descriere": "Inel din aur alb cu diamant model 10",
+      "sfert_ora": 4,
+      "galerie-animata": true
     }
   ]
 } 

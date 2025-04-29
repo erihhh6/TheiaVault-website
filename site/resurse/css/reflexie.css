@@ -2,29 +2,27 @@
 #zona1 h2 {
   position: relative;
   display: inline-block;
-  color: #2D2547;
-  margin-bottom: 30px;
+  margin-bottom: 50px; /* Spațiu pentru reflexie */
 }
 
-/* Reflexia în oglindă */
+/* Reflexia de bază - ca oglindirea într-un lac */
 #zona1 h2::after {
   content: attr(data-text);
   position: absolute;
-  left: 5px; /* Deplasare ușoară spre dreapta */
-  top: 100%;
-  width: 100%;
-  transform: scaleY(-1) skewY(-7deg); /* Oglindire + înclinare pe diagonală */
-  transform-origin: top left; /* Punct de origine pentru diagonală */
-  opacity: 0.4;
-  filter: blur(1px); /* Blur mai redus inițial */
-  color: #555;
-  transition: all 0.4s ease-in-out;
+  left: -5%;         /* Exact sub text, fără offset lateral */
+  top: -45%;       /* Începe imediat sub text */
+  width: 100%;     /* Aceeași lățime ca textul original */
+  transform: scaleY(-1) skewX(-45deg);  /* Inversare + înclinare pentru efect 3D */
+  transform-origin: bottom;  /* Punctul de origine este partea de sus */
+  opacity: 0.4;    /* Opacitate pentru efect de apă */
+  filter: blur(1px);
+  color: #2D2547;  /* Aceeași culoare ca originalul */
+  transition: all 0.5s ease-in-out;
 }
 
-/* Efect de alungire la hover */
+/* Efect de alungire la hover - ca o undă pe suprafața apei */
 #zona1 h2:hover::after {
-  transform: scaleY(-1) skewY(-7deg) scaleY(1.4); /* Menține înclinarea la hover */
-  filter: blur(2.5px); /* Blur mai pronunțat la hover */
-  opacity: 0.3; /* Ușor mai transparent */
-  left: 8px; /* Deplasare puțin mai accentuată la hover */
+  transform: scaleY(-1.2) skewX(-45deg);  /* Se alungește vertical păstrând înclinarea */
+  filter: blur(2px);        /* Blur mai pronunțat */
+  opacity: 0.3;             /* Mai transparent */
 }

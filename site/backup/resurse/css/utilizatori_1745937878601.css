@@ -1,0 +1,133 @@
+@charset "UTF-8";
+/* Stiluri pentru sectiunea de utilizatori online (zona5) */
+/* Import variables from general.css as SCSS variables */
+/* Styling for user-info section */
+.user-info {
+  background-color: rgba(227, 186, 203, 0.3);
+  border: 2px solid #544BB8;
+  border-radius: 10px;
+  padding: 22.5px;
+  margin: 30px 0;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s, box-shadow 0.3s;
+  /* Animation for the IP address */
+}
+.user-info:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+.user-info p {
+  margin-bottom: 15px;
+  line-height: 1.6;
+}
+.user-info p strong {
+  color: #2E3194;
+  font-weight: bold;
+  font-size: 1.21rem;
+}
+.user-info p em {
+  color: #2D2547;
+  font-style: italic;
+  font-size: 0.9rem;
+}
+.user-info strong + span {
+  position: relative;
+}
+.user-info strong + span::after {
+  content: "";
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: #C17DA7;
+  animation: pulse 2s infinite;
+}
+
+/* Styling for online-stats section */
+.online-stats {
+  background-color: rgba(46, 49, 148, 0.15);
+  margin-top: 22.5px;
+  padding: 18px;
+  border-top: 2px dashed #544BB8;
+  border-radius: 0 0 8px 8px;
+  position: relative;
+}
+.online-stats::before {
+  content: "👥";
+  position: absolute;
+  top: -15px;
+  right: 15px;
+  font-size: 24px;
+  background-color: #544BB8;
+  color: #ffffff;
+  width: 30px;
+  height: 30px;
+  line-height: 30px;
+  text-align: center;
+  border-radius: 50%;
+}
+.online-stats p {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+}
+.online-stats p strong {
+  color: #544BB8;
+  flex: 1;
+}
+.online-stats p:last-child {
+  margin-bottom: 0;
+}
+
+/* Section title styling */
+#zona5 h2 {
+  color: #2E3194;
+  font-size: 2rem;
+  margin-bottom: 22.5px;
+  position: relative;
+  display: inline-block;
+}
+#zona5 h2::after {
+  content: "";
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: linear-gradient(to right, #2E3194, #C17DA7);
+  border-radius: 8px;
+}
+
+/* Media queries for responsive design */
+@media (max-width: 768px) {
+  .user-info {
+    padding: 15px;
+  }
+  .online-stats {
+    padding: 15px;
+  }
+  .online-stats p {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .online-stats p strong {
+    margin-bottom: 5px;
+  }
+  #zona5 h2 {
+    font-size: 1.5rem;
+  }
+}
+/* Animation keyframes */
+@keyframes pulse {
+  0% {
+    opacity: 0.6;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0.6;
+  }
+}
